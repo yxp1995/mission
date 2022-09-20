@@ -3,7 +3,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
+const routes = [{
+    path: '/',
+    redirect: '/taskFlowPlan'
+  },
   {
     path: '/taskFlowPlan',
     name: 'taskFlowPlan',
@@ -12,12 +15,12 @@ const routes = [
   {
     path: '/taskPlanMag',
     name: 'taskPlanMag',
-    component: () => import( '../views/taskPlanMag/index.vue')
+    component: () => import('../views/taskPlanMag/index.vue')
   },
   {
     path: '/operationalUsageSituation',
     name: 'operationalUsageSituation',
-    component: () => import( '../views/operationalUsageSituation/index.vue')
+    component: () => import('../views/operationalUsageSituation/index.vue')
   },
   {
     path: '/comprehensiveAssessment',
@@ -26,7 +29,7 @@ const routes = [
   },
 ]
 
- 
+
 
 
 const router = new VueRouter({
