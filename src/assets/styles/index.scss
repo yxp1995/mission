@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+.datacommon {
+  width: 100%;
+  height: 100vh;
+  min-width: 1300px;
+  background: url(../images/three.png) no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+
+  .leftImg {
+    position: absolute;
+    height: 110px;
+    left: 20px;
+    bottom: 30px;
+  }
+
+  .rightImg {
+    position: absolute;
+    height: 110px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .datacommon-frame {
+    height: calc(100% - 50px);
+    width: calc(100% - 70px);
+    margin: 25px auto;
+    background: url(../images/five.png) no-repeat;
+    background-size: 100% 100%;
+
+    .datacommon-title {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      // background: url(~@/assets/images/four.png) no-repeat;
+      // background-size: 100% 100px;
+
+      .title-txt {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .title-img {
+        height: 21px;
+      }
+    }
+  }
+
+  .datacommon-container {
+    width: calc(100% - 30px);
+    height: calc(100% - 168px);
+    margin: 25px 15px;
+
+    .main {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+
+      .main-left {
+        width: calc(25% - 30px);
+        height: 100%;
+
+        .left-top-title {
+          height: 58%;
+          border: 1px solid #00b2ff;
+        }
+
+        .left-btm-title {
+          height: 38%;
+          border: 1px solid #00b2ff;
+          margin-top: 4%;
+        }
+      }
+
+      .main-center {
+        width: 50%;
+        height: 100%;
+
+        .center-top-title {
+          height: 62%;
+          border: 1px solid #00b2ff;
+        }
+
+        .center-btm-title {
+          height: 34%;
+          border: 1px solid #00b2ff;
+          margin-top: 2%;
+        }
+      }
+
+      .main-right {
+        width: calc(25% - 30px);
+        height: 100%;
+
+        .right-top-title {
+          height: 58%;
+          border: 1px solid #00b2ff;
+        }
+
+        .right-btm-title {
+          height: 38%;
+          border: 1px solid #00b2ff;
+          margin-top: 4%;
+        }
+      }
+
+      .text-title {
+        display: flex;
+        justify-content: space-between;
+        width: 270px;
+        height: 40px;
+        line-height: 40px;
+        margin: auto;
+
+        .text-txt {
+          font-size: 16px;
+          color: #fff;
+        }
+
+        .text-img {
+          img {
+            vertical-align: middle;
+          }
+        }
+      }
+
+
+
+    }
+  }
+
+  .datacommon-nav {
+    display: flex;
+    width: 40%;
+    margin: auto;
+
+    li {
+      flex: 1;
+      height: 40px;
+      line-height: 40px;
+      color: #ffffff;
+      overflow: hidden;
+      background: url(~@/assets/images/twelve.png) no-repeat left 0px top 0px;
+        background-size: 100% 100%;
+      &.active {
+        background: url(~@/assets/images/fourteen.png) no-repeat left 0px top 0px;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
