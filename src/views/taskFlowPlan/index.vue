@@ -2,7 +2,7 @@
   <div class="datacommon-container">
     <div class="main">
       <div class="main-left">
-        <div class="left-top-title">
+        <div class="left-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -14,8 +14,11 @@
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
           </div>
+          <div class="main-container">
+            <navigation />
+          </div>
         </div>
-        <div class="left-btm-title">
+        <div class="left-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -30,7 +33,7 @@
         </div>
       </div>
       <div class="main-center">
-        <div class="center-top-title">
+        <div class="center-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -43,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="center-btm-title">
+        <div class="center-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -58,7 +61,7 @@
         </div>
       </div>
       <div class="main-right">
-        <div class="right-top-title">
+        <div class="right-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -71,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="right-btm-title">
+        <div class="right-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -90,7 +93,12 @@
 </template>
 
 <script>
+import navigation from "./navigation";
 export default {
+  name: "TaskFlowPlan",
+  components: {
+    navigation,
+  },
   data() {
     return {};
   },

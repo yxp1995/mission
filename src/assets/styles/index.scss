@@ -76,12 +76,17 @@ li {
         width: calc(25% - 30px);
         height: 100%;
 
-        .left-top-title {
+        .left-top {
           height: 58%;
           border: 1px solid #00b2ff;
+          .main-container {
+            padding: 10px 20px;
+            height: calc(100% - 70px);
+            margin-top: 10px;
+          }
         }
 
-        .left-btm-title {
+        .left-btm {
           height: 38%;
           border: 1px solid #00b2ff;
           margin-top: 4%;
@@ -92,12 +97,12 @@ li {
         width: 50%;
         height: 100%;
 
-        .center-top-title {
+        .center-top {
           height: 62%;
           border: 1px solid #00b2ff;
         }
 
-        .center-btm-title {
+        .center-btm {
           height: 34%;
           border: 1px solid #00b2ff;
           margin-top: 2%;
@@ -108,12 +113,12 @@ li {
         width: calc(25% - 30px);
         height: 100%;
 
-        .right-top-title {
+        .right-top {
           height: 58%;
           border: 1px solid #00b2ff;
         }
 
-        .right-btm-title {
+        .right-btm {
           height: 38%;
           border: 1px solid #00b2ff;
           margin-top: 4%;
@@ -164,4 +169,23 @@ li {
       }
     }
   }
+}
+
+
+//滚动条整体样式
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #010a27;
+}
+//滚动条滑块的样式
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
+}
+//两个滚动条交叉处的样式
+::-webkit-scrollbar-corner {
+  background-color: rgba(255, 255, 255, 0.6);
 }
