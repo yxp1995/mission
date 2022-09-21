@@ -24,11 +24,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务编辑窗口</div>
+            <div class="text-txt">流程管理</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+          <div class="main-container">
+            <process-management/>
           </div>
         </div>
       </div>
@@ -94,10 +97,12 @@
 
 <script>
 import navigation from "./navigation";
+import processManagement from "./processManagement";
 export default {
   name: "TaskFlowPlan",
   components: {
     navigation,
+    processManagement,
   },
   data() {
     return {};

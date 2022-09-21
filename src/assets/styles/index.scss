@@ -78,7 +78,8 @@ li {
 
         .left-top {
           height: 58%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/sixteen.png) no-repeat;
+          background-size: 100% 100%;
           .main-container {
             padding: 10px 20px;
             height: calc(100% - 70px);
@@ -88,7 +89,8 @@ li {
 
         .left-btm {
           height: 38%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/sixteen.png) no-repeat;
+          background-size: 100% 100%;
           margin-top: 4%;
         }
       }
@@ -99,12 +101,14 @@ li {
 
         .center-top {
           height: 62%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/seventeen.png) no-repeat;
+          background-size: 100% 100%;
         }
 
         .center-btm {
           height: 34%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/seventeen.png) no-repeat;
+          background-size: 100% 100%;
           margin-top: 2%;
         }
       }
@@ -115,12 +119,14 @@ li {
 
         .right-top {
           height: 58%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/sixteen.png) no-repeat;
+          background-size: 100% 100%;
         }
 
         .right-btm {
           height: 38%;
-          border: 1px solid #00b2ff;
+          background: url(~@/assets/images/sixteen.png) no-repeat;
+          background-size: 100% 100%;
           margin-top: 4%;
         }
       }
@@ -162,7 +168,8 @@ li {
       color: #ffffff;
       overflow: hidden;
       background: url(~@/assets/images/twelve.png) no-repeat left 0px top 0px;
-        background-size: 100% 100%;
+      background-size: 100% 100%;
+
       &.active {
         background: url(~@/assets/images/fourteen.png) no-repeat left 0px top 0px;
         background-size: 100% 100%;
@@ -177,14 +184,17 @@ li {
   width: 4px;
   height: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: #010a27;
 }
+
 //滚动条滑块的样式
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20%;
 }
+
 //两个滚动条交叉处的样式
 ::-webkit-scrollbar-corner {
   background-color: rgba(255, 255, 255, 0.6);

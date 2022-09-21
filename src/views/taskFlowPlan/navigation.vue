@@ -1,5 +1,5 @@
 <template>
-  <div class="nac-box">
+  <div class="nav-box">
     <el-input v-model="queryParams.search" size="mini">
       <el-button slot="append" icon="el-icon-search"></el-button>
     </el-input>
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nac-box {
+.nav-box {
   height: 100%;
 }
 :deep(.el-timeline-item__tail) {
