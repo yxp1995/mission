@@ -62,7 +62,36 @@ export default {
           active: false,
         },
       ],
-      data: [],
+      data: [
+        {
+          id: "1",
+          label: "导航内容1",
+          children: [
+            {
+              id: "1-1",
+              label: "二级细分内容",
+            },
+            {
+              id: "1-2",
+              label: "二级细分内容",
+            },
+          ],
+        },
+        {
+          id: "2",
+          label: "导航内容2",
+          children: [
+            {
+              id: "2-1",
+              label: "二级细分内容",
+            },
+            {
+              id: "2-2",
+              label: "二级细分内容",
+            },
+          ],
+        },
+      ],
       defaultProps: {
         children: "children",
         label: "label",
@@ -133,5 +162,21 @@ export default {
   background-color: rgba(2, 64, 105, 0.247);
   color: #fff;
   border: 1px solid #07dbff;
+}
+:deep(.el-tree) {
+  height: calc(100% - 48px);
+  color: #fff;
+  background: rgba(0, 0, 0, 0);
+  margin-top: 10px;
+  overflow: auto;
+  .el-tree-node__content {
+    &:hover {
+      background: #045274;
+    }
+  }
+  .el-tree-node.is-current > .el-tree-node__content {
+    background: #08dffe;
+    color: #fff;
+  }
 }
 </style>
