@@ -69,8 +69,8 @@ li {
 
   .datacommon-container {
     width: calc(100% - 30px);
-    height: calc(100% - 168px);
-    margin: 25px 15px;
+    height: calc(100% - 143px);
+    margin: 25px 15px 0px 15px;
 
     .main {
       display: flex;
@@ -160,9 +160,6 @@ li {
           }
         }
       }
-
-
-
     }
   }
 
@@ -183,6 +180,58 @@ li {
       &.active {
         background: url(~@/assets/images/fourteen.png) no-repeat left 0px top 0px;
         background-size: 100% 100%;
+      }
+    }
+  }
+
+  .pollutions {
+    height: 100%;
+
+    .th {
+      font-size: 14px;
+      min-height: 30px;
+      display: flex;
+
+      li {
+        flex: 1;
+        text-align: center;
+        color: #09e7f1;
+        background: rgba(7, 169, 201, 0.2);
+        line-height: 30px;
+      }
+    }
+
+    .seamless-warp {
+      font-size: 14px;
+      height: calc(100% - 30px);
+      overflow: auto;
+
+      .item li {
+        min-height: 30px;
+        line-height: 30px;
+        display: flex;
+        padding: 5px 0;
+
+        span {
+          flex: 1;
+          text-align: center;
+          color: #fff;
+          font-size: 14px;
+
+          img {
+            position: relative;
+            top: 4px;
+            margin-right: 2px;
+          }
+        }
+
+        .red {
+          color: #ff0202;
+        }
+      }
+
+      .item li:nth-child(2n) {
+        background: rgba(7, 169, 201, 0.1);
       }
     }
   }

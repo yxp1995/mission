@@ -3,7 +3,7 @@
     <el-input v-model="queryParams.search" size="mini">
       <el-button slot="append" icon="el-icon-search"></el-button>
     </el-input>
-    <el-timeline class="timeLine">
+    <!-- <el-timeline class="timeLine">
       <el-timeline-item
         v-for="(activity, index) in activities"
         :key="index"
@@ -14,7 +14,16 @@
           {{ activity.content }}
         </div>
       </el-timeline-item>
-    </el-timeline>
+    </el-timeline> -->
+    <el-tree
+      class="filter-tree"
+      :data="data"
+      :props="defaultProps"
+      default-expand-all
+      :filter-node-method="filterNode"
+      ref="tree"
+    >
+    </el-tree>
   </div>
 </template>
 
@@ -53,7 +62,17 @@ export default {
           active: false,
         },
       ],
+      data: [],
+      defaultProps: {
+        children: "children",
+        label: "label",
+      },
     };
+  },
+  watch: {
+    "queryParams.search"(val) {
+      this.$refs.tree.filter(val);
+    },
   },
   methods: {
     timeClick(item) {
@@ -64,6 +83,10 @@ export default {
           itemx.active = false;
         }
       });
+    },
+    filterNode(value, data) {
+      if (!value) return true;
+      return data.label.indexOf(value) !== -1;
     },
   },
 };

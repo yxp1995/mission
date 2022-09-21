@@ -31,7 +31,7 @@
         模板载入:
       </el-col>
       <el-col :span="8">
-        <el-button size="mini">载入</el-button>
+        <el-button size="mini" class="linear">载入</el-button>
       </el-col>
     </el-row>
   </div>
@@ -116,6 +116,10 @@ export default {
         margin-top: 8px;
       }
     }
+  }
+  .linear {
+    background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
+    color: #fff;
   }
 }
 </style>

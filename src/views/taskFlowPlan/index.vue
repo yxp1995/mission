@@ -42,7 +42,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务总览图</div>
+            <div class="text-txt">任务流程计划</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -55,11 +55,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">产品选择</div>
+            <div class="text-txt">工序管理</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+          <div class="main-container">
+            <work-management/>
           </div>
         </div>
       </div>
@@ -89,6 +92,9 @@
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
           </div>
+          <div class="main-container">
+            <hint-window />
+          </div>
         </div>
       </div>
     </div>
@@ -98,11 +104,15 @@
 <script>
 import navigation from "./navigation";
 import processManagement from "./processManagement";
+import workManagement from "./workManagement";
+import hintWindow from "./hintWindow";
 export default {
   name: "TaskFlowPlan",
   components: {
     navigation,
     processManagement,
+    workManagement,
+    hintWindow,
   },
   data() {
     return {};
