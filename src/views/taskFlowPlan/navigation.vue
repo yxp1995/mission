@@ -30,7 +30,7 @@ export default {
         {
           id: 1,
           content: "导航内容1选中",
-          active: false,
+          active: true,
         },
         {
           id: 2,
