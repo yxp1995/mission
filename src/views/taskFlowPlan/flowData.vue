@@ -43,43 +43,32 @@ export default {
             },
             progress: {
               show: true,
-              width: 30,
+              width: 10,
             },
             pointer: {
               show: false,
             },
             axisLine: {
               lineStyle: {
-                width: 30,
+                width: 10,
               },
             },
             axisTick: {
               show: false,
-              distance: -45,
-              splitNumber: 5,
-              lineStyle: {
-                width: 2,
-                color: "#999",
-              },
             },
             splitLine: {
-              distance: -52,
-              length: 14,
-              lineStyle: {
-                width: 3,
-                color: "#999",
-              },
+              show: false,
             },
             axisLabel: {
-              distance: -20,
-              color: "#999",
-              fontSize: 20,
+              show: false,
             },
             anchor: {
               show: false,
             },
             title: {
-              show: false,
+              show: true,
+              color: "#ffffff",
+              fontSize: 12,
             },
             detail: {
               valueAnimation: true,
@@ -87,14 +76,15 @@ export default {
               lineHeight: 40,
               borderRadius: 8,
               offsetCenter: [0, "-15%"],
-              fontSize: 60,
+              fontSize: 14,
               fontWeight: "bolder",
-              formatter: "{value} °C",
+              formatter: "{value} %",
               color: "auto",
             },
             data: [
               {
                 value: 20,
+                name: "风险等级",
               },
             ],
           },
@@ -106,6 +96,7 @@ export default {
         //   formatter: function (params) {
         //     const { dataIndex, data } = params;
         //     if (dataIndex == 1) {
+        //       console.log(data)
         //       return `<div>占比量:</div><div>${data.value}%</div>`;
         //     } else {
         //       return "";
@@ -152,9 +143,53 @@ export default {
               return Math.random() * 200;
             },
             data: [
-              { value: 100 - 86.4, itemStyle: { color: "#66b4ff" } },
-              { value: 86.4, itemStyle: { color: "#ffffff" } },
+              { value: 100 - 86.4, itemStyle: { color: "#253150" } },
+              { value: 86.4, itemStyle: { color: "#0ffdfe" } },
             ],
+          },
+        ],
+      },
+      option3: {
+        tooltip: {
+          trigger: "item",
+        },
+        legend: {
+          bottom: "0",
+          textStyle: {
+            color: "#fff",
+          },
+        },
+        series: [
+          {
+            name: "Access From",
+            type: "pie",
+            radius: "50%",
+            data: [
+              { value: 1048, name: "1" },
+              { value: 735, name: "2" },
+              { value: 580, name: "3" },
+              { value: 484, name: "4" },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+            itemStyle: {
+              normal: {
+                color: function (colors) {
+                  var colorList = [
+                    "#dd5aff",
+                    "#b8cc54",
+                    "#50cefe",
+                    "#86a5fa",
+                  ];
+                  return colorList[colors.dataIndex];
+                },
+              },
+            },
           },
         ],
       },
@@ -165,7 +200,7 @@ export default {
   },
   methods: {
     initCharts() {
-      for (let i = 1; i < 3; i++) {
+      for (let i = 1; i <= 3; i++) {
         let chartDom = document.getElementById(`charts${i}`);
         this.myChart = echarts.init(chartDom);
         this[`option${i}`] && this.myChart.setOption(this[`option${i}`]);
@@ -179,12 +214,15 @@ export default {
 .flow-box {
   height: 100%;
   .el-row {
-    height: 33.33%;
+    height: 35%;
     font-weight: 600;
     background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    &:nth-child(2) {
+      height: 30%;
+    }
     .el-col {
       height: 100%;
       display: flex;

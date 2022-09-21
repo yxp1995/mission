@@ -50,6 +50,7 @@ export default {
             color: "#fff",
           },
           axisLine: {
+            show: true,
             lineStyle: {
               color: "#fff",
             },
