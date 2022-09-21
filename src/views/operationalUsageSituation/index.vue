@@ -24,11 +24,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务编辑窗口</div>
+            <div class="text-txt">显控窗口</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+          <div class="main-container">
+            <task-edit />
           </div>
         </div>
       </div>
@@ -39,11 +42,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务总览图</div>
+            <div class="text-txt">任务窗口</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+            <div class="main-container">
+            <middle-bar />
           </div>
         </div>
         <div class="center-btm">
@@ -52,11 +58,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">产品选择</div>
+            <div class="text-txt">任务详情</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+    <div class="main-container">
+            <task-detail />
           </div>
         </div>
       </div>
@@ -73,7 +82,10 @@
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
           </div>
-          <using-distribution />
+
+          <div class="main-container">
+            <using-distribution />
+          </div>
         </div>
         <div class="right-btm">
           <div class="text-title">
@@ -87,7 +99,9 @@
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
           </div>
-          <prompt/>
+          <div class="main-container">
+            <prompt />
+          </div>
         </div>
       </div>
     </div>
@@ -97,13 +111,19 @@
 <script>
 import navigation from "../taskFlowPlan/navigation.vue";
 import usingDistribution from "./usingDistribution.vue";
-import prompt from "./prompt.vue"
+import prompt from "./prompt.vue";
+import taskEdit from "./taskEdit.vue";
+import TaskDetail  from "./taskDetail.vue"
+import middleBar from "./middleBar.vue"
 export default {
   name: "OperationalUsageSituation",
   components: {
     navigation,
     usingDistribution,
-    prompt
+    prompt,
+    taskEdit,
+    TaskDetail,
+    middleBar
   },
   data() {
     return {};
