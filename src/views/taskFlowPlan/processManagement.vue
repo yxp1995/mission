@@ -1,13 +1,13 @@
 <template>
   <div class="pro-box">
     <el-row :gutter="20">
-      <el-col :span="7"> 匹配任务: </el-col>
+      <el-col :span="7" class="linear-text"> 匹配任务: </el-col>
       <el-col :span="8">
         <div class="btn">{{ "NO:" + process.num1 }}</div>
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="7"> 流程选择: </el-col>
+      <el-col :span="7" class="linear-text"> 流程选择: </el-col>
       <el-col :span="8">
         <div class="btn">{{ "NO:" + process.num2 }}</div>
       </el-col>
@@ -27,7 +27,7 @@
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="7">
+      <el-col :span="7" class="linear-text">
         模板载入:
       </el-col>
       <el-col :span="8">
@@ -120,6 +120,13 @@ export default {
   .linear {
     background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
     color: #fff;
+  }
+  .linear-text {
+    font-weight: 600;
+    background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 </style>

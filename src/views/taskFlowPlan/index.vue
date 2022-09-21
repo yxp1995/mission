@@ -48,6 +48,9 @@
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
           </div>
+          <div class="main-container">
+            <process-plan />
+          </div>
         </div>
         <div class="center-btm">
           <div class="text-title">
@@ -73,11 +76,14 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">使用分布</div>
+            <div class="text-txt">流程数据</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
             </div>
+          </div>
+          <div class="main-container">
+            <flow-data/>
           </div>
         </div>
         <div class="right-btm">
@@ -106,6 +112,8 @@ import navigation from "./navigation";
 import processManagement from "./processManagement";
 import workManagement from "./workManagement";
 import hintWindow from "./hintWindow";
+import processPlan from "./processPlan";
+import flowData from "./flowData";
 export default {
   name: "TaskFlowPlan",
   components: {
@@ -113,6 +121,8 @@ export default {
     processManagement,
     workManagement,
     hintWindow,
+    processPlan,
+    flowData,
   },
   data() {
     return {};
