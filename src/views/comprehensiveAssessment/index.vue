@@ -1,6 +1,6 @@
 <template>
     <div>
-        综合效能评估
+        综合效能评估1111
         <el-button type="primary">按钮</el-button>
     </div>
 </template>
