@@ -54,6 +54,7 @@ export default {
       .el-transfer {
         height: 100%;
         :deep(.el-transfer-panel) {
+          width: calc(50% - 38px) !important;
           height: 100%;
           background: rgba(0, 0, 0, 0);
           border: 1px solid #94a9db;
