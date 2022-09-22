@@ -33,6 +33,11 @@
             >
           </div>
         </li>
+        <li :class="num == 5 ? 'active' : ''">
+          <div class="bgc">
+            <router-link to="/dataMag">数据管理</router-link>
+          </div>
+        </li>
       </ul>
     </div>
     <img src="~@/assets/images/six.png" alt="" class="rightImg" />
@@ -58,6 +63,8 @@ export default {
           this.num = 3;
         } else if (to.path == "/comprehensiveAssessment") {
           this.num = 4;
+        } else if (to.path == "/dataMag") {
+          this.num = 5;
         }
       },
       deep: true,

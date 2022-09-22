@@ -80,7 +80,7 @@ export default {
   overflow: auto;
 }
 #all2 {
-  width: 670px;
+  width: 100%;
   height: 120px;
 }
 </style>

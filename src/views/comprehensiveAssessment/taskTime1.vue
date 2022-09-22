@@ -152,10 +152,11 @@ export default {
 <style lang="scss" scoped>
 .box {
   height: 100%;
-  overflow: auto;
+  // overflow: auto;
 }
+ 
 #main {
-  width: 280px;
-  height: 150px;
+  width: 100%;
+ height: 150px;
 }
 </style>

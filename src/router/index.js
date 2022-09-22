@@ -27,6 +27,11 @@ const routes = [{
     name: 'comprehensiveAssessment',
     component: () => import('../views/comprehensiveAssessment/index.vue')
   },
+  {
+    path: '/dataMag',
+    name: 'dataMag',
+    component: () => import('../views/dataMag/index.vue')
+  },
 ]
 
 

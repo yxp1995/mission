@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="dis-box">
     <div
       ref="chartPanel"
       id="chart-panel"
-      style="width: 100%; height: 110px"
+     class="top"
     ></div>
 
     <div
       ref="chartPanel2"
       id="chart-panel2"
-      style="width: 100%; height: 110px; margin-top: 15px"
+     class="btm"
     ></div>
   </div>
 </template>
@@ -319,4 +319,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.dis-box {
+  height: 100%;
+  .top {
+    width: 100%;
+    height: calc(50% - 8px);
+  }
+  .btm {
+    width: 100%;
+    height: calc(50% - 8px);
+    margin-top: 16px;
+  }
+}
 </style>
