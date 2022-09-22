@@ -1,7 +1,6 @@
 <template>
   <div class="box">
-    <!-- <div id="main" class="bar"></div> -->
-    雷达图
+    <div id="item"></div>
   </div>
 </template>
 
@@ -13,113 +12,136 @@ export default {
     return {};
   },
   mounted() {
-
     // this.$nextTick(() => {
-        //  this.getBar();
-      // console.log(canvas);
-     
+    this.getChartsBar();
+    // console.log(canvas);
+
     // });
   },
   methods: {
-    getBar() {
-       var chartDom = document.getElementById('main');
-var myChart = echarts.init(chartDom);
-var option;
+    getChartsBar() {
+      var chartDom = document.getElementById("item");
+      var myChart = echarts.init(chartDom);
+      var option;
 
-option = {
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      type: 'shadow'
-    },
-    formatter: function (params) {
-      let tar;
-      if (params[1].value !== '-') {
-        tar = params[1];
-      } else {
-        tar = params[0];
-      }
-      return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
-    }
-  },
+      option = {
+        legend: {
+          data: ["2013", "2014", "2015", "2016"],
+          textStyle: {
+              color: "#fff",
+            },
+            right:80,
+          bottom: 0,
+           orient: 'vertical',
+        },
+        radar: {
+          // shape: 'circle',
+          indicator: [
+            { name: "内容1", max: 6500 },
+            { name: "内容2", max: 16000 },
+            { name: "内容3", max: 30000 },
+            { name: "内容4", max: 38000 },
+            { name: "内容5", max: 52000 },
+          ],
+             textStyle: {
+              color: "#fff",
+            },
+        },
+        series: [
+          {
+            type: "radar",
+            data: [
+              {
+                value: [4200, 3000, 20000, 35000, 50000],
+                name: "2013",
+                areaStyle: {
+                  // 区域样式
+                  color: "#409EFF",
+                  opacity: 0.5,
+                },
+                itemStyle: {
+                  //阴影部分的边框
+                  normal: {
+                    color: "#409EFF",
+                    lineStyle: {
+                      color: "#409EFF",
+                    },
+                  },
+                },
+              },
+              {
+                value: [5000, 14000, 28000, 26000, 42000],
+                name: "2014",
+                areaStyle: {
+                  // 区域样式
+                  color: "#ee6666",
+                  opacity: 0.5,
+                },
+                itemStyle: {
+                  //阴影部分的边框
+                  normal: {
+                    color: "#ee6666",
+                    lineStyle: {
+                      color: "#ee6666",
+                    },
+                  },
+                },
+              },
+              {
+                value: [3500, 3000, 10000, 25000, 30000],
+                name: "2015",
+                areaStyle: {
+                  // 区域样式
+                  color: "#5470c6",
+                  opacity: 0.5,
+                },
+                itemStyle: {
+                  //阴影部分的边框
+                  normal: {
+                    color: "#5470c6",
+                    lineStyle: {
+                      color: "#5470c6",
+                    },
+                  },
+                },
+              },
+              {
+                value: [6200, 3700, 20300, 15000, 20000],
+                name: "2016",
+                areaStyle: {
+                  // 区域样式
+                  color: "#fc8452",
+                  opacity: 0.5,
+                },
+                itemStyle: {
+                  //阴影部分的边框
+                  normal: {
+                    color: "#fc8452",
+                    lineStyle: {
+                      color: "#fc8452",
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      };
 
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true,
-    // show:true,
-    // backgroundColor:"black"
-
-  },
-  xAxis: {
-    type: 'category',
-    name: '日期',
-    nameLocation: 'start',
-    data: (function () {
-      let list = [];
-      for (let i = 1; i <= 12; i++) {
-        list.push(i);
-      }
-      return list;
-    })()
-  },
-  yAxis: {
-    type: 'value',
-    name: '任务编号'
-  },
-  series: [
-    {
-      name: '任务1',
-      type: 'bar',
-      stack: 'Total',
-      itemStyle: {
-        borderColor: 'transparent',
-        color: 'transparent'
-      },
-      emphasis: {
-        // itemStyle: {
-        //   borderColor: 'transparent',
-        //   color: 'transparent'
-        // }
-      },
-      data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
-    },
-    {
-      name: '任务2',
-      type: 'bar',
-      stack: 'Total',
-      label: {
-        show: true,
-        position: 'top'
-      },
-      data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
-    },
-    {
-      name: '任务3',
-      type: 'bar',
-      stack: 'Total',
-      label: {
-        show: true,
-        position: 'bottom'
-      },
-      data: ['-', '-', '-', 108, 154, '-', '-', '-', 119, 361, 203]
-    }
-  ]
-};
-
-option && myChart.setOption(option);
-
+      option && myChart.setOption(option);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.bar {
-  width: 100%;
-  height: 263px;
-  background-color: black;
+.box {
+  height: 100%;
+  overflow: auto;
 }
+#item {
+  width: 100%;
+  height: 100%;
  
+}
 </style>

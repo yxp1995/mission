@@ -24,26 +24,36 @@ export default {
         tooltip: {
           trigger: "axis",
         },
-        legend: {
-          data: [
-            {
-              name: "已认证",
-              icon: "rect", //图例形状
-            },
-            {
-              name: "已检测",
-              icon: "rect", //图例形状
-            },
-            {
-              name: "认证中",
-              icon: "rect", //图例形状
-            },
-          ],
-        },
+        // legend: {
+        //   bottom:0,
+        //   data: [
+        //     {
+        //       name: "已认证",
+        //       icon: "rect", //图例形状
+        //       textStyle: {
+        //       color: "#fff",
+        //     },
+        //     },
+        //     {
+        //       name: "已检测",
+        //       icon: "rect", //图例形状
+        //       textStyle: {
+        //       color: "#fff",
+        //     },
+        //     },
+        //     {
+        //       name: "认证中",
+        //       icon: "rect", //图例形状
+        //       textStyle: {
+        //       color: "#fff",
+        //     },
+        //     },
+        //   ],
+        // },
         grid: {
           left: "3%",
           right: "4%",
-          bottom: "3%",
+          top: "1%",
           containLabel: true,
         },
          
@@ -51,9 +61,27 @@ export default {
           type: "category",
           boundaryGap: false,
           data: ["1", "2", "3", "4", "5", "6", "7"],
+          nameTextStyle: {
+              color: "#fff",
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: "#fff",
+              },
+            },
         },
         yAxis: {
           type: "value",
+          nameTextStyle: {
+              color: "#fff",
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: "#fff",
+              },
+            },
         },
         series: [
           {
@@ -90,6 +118,6 @@ export default {
 }
 #all {
   width: 280px;
-  height: 200px;
+  height: 150px;
 }
 </style>

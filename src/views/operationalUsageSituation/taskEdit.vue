@@ -15,7 +15,7 @@
       </el-col>
 
       <el-col :span="8">
-        <el-button type="danger" size="mini">单独显示</el-button>
+        <el-button  size="mini" class="linear">单独显示</el-button>
       </el-col>
     </el-row>
     <el-row :gutter="30">
@@ -27,7 +27,7 @@
         <div class="minus" @click="minusClick(3)">-</div>
       </el-col>
       <el-col :span="8">
-        <el-button type="danger" size="mini">单独显示</el-button>
+        <el-button   size="mini" class="linear">单独显示</el-button>
       </el-col>
     </el-row>
   </div>
