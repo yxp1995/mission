@@ -80,6 +80,7 @@ li {
       .main-left {
         width: calc(25% - 30px);
         height: 100%;
+        overflow-y: auto;
 
         .left-top {
           height: 58%;
@@ -141,6 +142,10 @@ li {
         margin-top: 10px;
       }
 
+      .item-box {
+        position: relative;
+      }
+
       .text-title {
         display: flex;
         justify-content: space-between;
@@ -159,7 +164,17 @@ li {
             vertical-align: middle;
           }
         }
+
+        .title-icon {
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          right: 20px;
+          top: 22px;
+          cursor: pointer;
+        }
       }
+
     }
   }
 
@@ -236,6 +251,70 @@ li {
     }
   }
 }
+
+// 各种el框设置透明
+.el-input {
+  width: 100%;
+}
+
+.el-input__inner,
+.el-input-group__append,
+.el-select-dropdown {
+  background-color: #041539;
+  color: #fff;
+  border: 1px solid #07dbff;
+}
+
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: 100%;
+}
+
+.elDatePicker.el-picker-panel {
+  color: #fff; //设置当前面板的月份的字体为白色，记为1
+  background: #041539; //定义整体面板的颜色
+  border: 1px solid #07dbff; //定义整体面板的轮廓
+
+  .el-picker-panel__icon-btn {
+    //设置年份月份调节按钮颜色，记为2
+    color: #ffffff;
+  }
+
+  .el-date-picker__header-label {
+    //设置年月显示颜色，记为3
+    color: #ffffff;
+  }
+
+  .el-date-table th {
+    //设置星期颜色，记为4
+    color: #ffffff;
+  }
+}
+
+.el-select {
+  width: 100%;
+  
+}
+.el-popper .popper__arrow::after {
+  border-bottom-color: #07dbff!important;
+} 
+
+.el-select:hover .el-input__inner{
+  border: 1px solid #07dbff;
+}
+.el-select-dropdown__item {
+  color: #fff;
+}
+.el-select-dropdown__item.selected,
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+  color: #fff;
+  background: #045274;
+}
+.el-select-dropdown__item.hover,
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
+  background: #045274;
+}
+
 
 
 //滚动条整体样式

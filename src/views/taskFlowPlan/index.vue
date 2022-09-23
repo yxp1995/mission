@@ -2,7 +2,7 @@
   <div class="datacommon-container">
     <div class="main">
       <div class="main-left">
-        <div class="left-top">
+        <!-- <div class="left-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -17,8 +17,8 @@
           <div class="main-container">
             <navigation />
           </div>
-        </div>
-        <div class="left-btm">
+        </div> -->
+        <!-- <div class="left-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -33,7 +33,8 @@
           <div class="main-container">
             <process-management/>
           </div>
-        </div>
+        </div> -->
+        <left-collapse />
       </div>
       <div class="main-center">
         <div class="center-top">
@@ -65,7 +66,7 @@
             </div>
           </div>
           <div class="main-container">
-            <work-management/>
+            <work-management />
           </div>
         </div>
       </div>
@@ -83,7 +84,7 @@
             </div>
           </div>
           <div class="main-container">
-            <flow-data/>
+            <flow-data />
           </div>
         </div>
         <div class="right-btm">
@@ -108,17 +109,19 @@
 </template>
 
 <script>
-import navigation from "./navigation";
-import processManagement from "./processManagement";
+// import navigation from "./navigation";
+// import processManagement from "./processManagement";
 import workManagement from "./workManagement";
 import hintWindow from "./hintWindow";
 import processPlan from "./processPlan";
 import flowData from "./flowData";
+import leftCollapse from "./components/leftCollapse";
 export default {
   name: "TaskFlowPlan",
   components: {
-    navigation,
-    processManagement,
+    // navigation,
+    // processManagement,
+    leftCollapse,
     workManagement,
     hintWindow,
     processPlan,
