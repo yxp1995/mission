@@ -1,325 +1,215 @@
 <template>
   <div class="dis-box">
-    <div
-      ref="chartPanel"
-      id="chart-panel"
-     class="top"
-    ></div>
+    <div ref="chartPanel" id="chart-panel" class="top"></div>
 
-    <div
-      ref="chartPanel2"
-      id="chart-panel2"
-     class="btm"
-    ></div>
+    <div ref="chartPanel2" id="chart-panel2" class="btm"></div>
   </div>
 </template>
 
 <script>
-import { getPie3D } from "../../utils/echarts/3Dpie";
 import * as echarts from "echarts";
 export default {
   data() {
-    return {
-      optionData: [
-        {
-          name: "医药研发",
-          value: 12,
-          itemStyle: {
-            opacity: 0.2,
-            color: "#D6476C",
-          },
-        },
-        {
-          name: "生物科技",
-          value: 16,
-          itemStyle: {
-            opacity: 0.2,
-            color: "#017DC1",
-          },
-        },
-        {
-          name: "房地产",
-          value: 14,
-          itemStyle: {
-            opacity: 0.2,
-            color: "#804BC6",
-          },
-        },
-        {
-          name: "互联网科技",
-          value: 81,
-          itemStyle: {
-            opacity: 0.2,
-            color: "#44BA9C",
-          },
-        },
-        {
-          name: "软件外包",
-          value: 66,
-          itemStyle: {
-            opacity: 0.2,
-            color: "#3F14C9",
-          },
-        },
-      ],
-    };
+    return {};
   },
 
   mounted() {
-    this.draw3d();
-    this.$nextTick(() => {
-      let parent = document.getElementById("chart-panel"); // 获取父元素
-      let canvas = parent.getElementsByTagName("canvas"); // 获取父元素下面的所有canvas元素
-      // console.log(canvas);
-      canvas[1].style.transform = "rotateX(-30deg)";
-    });
-
-    this.draw3d2();
-    this.$nextTick(() => {
-      let parent = document.getElementById("chart-panel2"); // 获取父元素
-      let canvas = parent.getElementsByTagName("canvas"); // 获取父元素下面的所有canvas元素
-      // console.log(canvas);
-      canvas[1].style.transform = "rotateX(-30deg)";
-    });
-
-
+    this.getLoop();
+    this.getLoop2();
   },
   methods: {
-    draw3d() {
-      let legendData = [];
-      this.optionData.forEach((item) => legendData.push(item.name));
-      // 基于准备好的dom，初始化echarts实例
-      let chartPanel = echarts.init(document.getElementById("chart-panel"));
-      for (let i = 0; i < this.optionData.length; i++) {
-        delete this.optionData[i].itemStyle.opacity;
-      }
-      // 传入数据生成 option
-      let series = getPie3D(this.optionData, 2);
-      let option = {
+    getLoop() {
+      var chartDom = document.getElementById("chart-panel");
+      var myChart = echarts.init(chartDom);
+      var option;
+
+      let data = 89;
+      option = {
         title: {
-          text: "产品分布",
-         textStyle:{
-            color:"#fff",
-            fontSize:14
-         },
-         left:3
-
-        },
-        tooltip: {
-          formatter: (params) => {
-            // console.log(params)
-            if (
-              params.seriesName !== "mouseoutSeries" &&
-              params.seriesName !== "pie2d"
-            ) {
-              return `<div style="padding:0 10px">${params.seriesName}：${(
-                option.series[params.seriesIndex].pieData.proportion * 100
-              ).toFixed(2)}%</div>`;
-            }
-          },
-        },
-        legend: {
-          data: legendData,
-          //   width: "90%",
-          itemGap: 5,
-          bottom: "bottom",
-          right: "right",
+          // 标题组件，包含主标题和副标题
+          text: "Z型产品", // 主标题文本，支持使用 \n 换行。
+          top: "0", // title 组件离容器上侧的距离。top 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比，也可以是 'top', 'middle', 'bottom'
+          left: "0", // title 组件离容器左侧的距离。 ...同上
           textStyle: {
-            color: "#fff",
-            fontSize: 10,
+            // 主标题文字的设置
+            fontSize: 16,
+            fontWeight: "normal",
+            color:"#fff"
           },
         },
-        xAxis3D: {
-          min: -1,
-          max: 1,
-        },
-        yAxis3D: {
-          min: -1,
-          max: 1,
-        },
-        zAxis3D: {
-          min: -1,
-          max: 1,
-        },
-
-        grid3D: {
-          show: false, //是否显示三维笛卡尔坐标系。
-          boxHeight: 40, //三维笛卡尔坐标系在三维场景中的高度
-          left: -70,
-         top:10,
-          // environment: "#021041", //背景
-          viewControl: {
-            //用于鼠标的旋转，缩放等视角控制
-            alpha: 40, //角度
-            distance: 180, //调整视角到主体的距离，类似调整zoom 重要
-            rotateSensitivity: 0, //设置为0无法旋转
-            zoomSensitivity: 0, //设置为0无法缩放
-            panSensitivity: 0, //设置为0无法平移
-            autoRotate: false, //自动旋转
+        series: [
+          {
+            type: "gauge", // 测量仪
+            center: ["50%", "50%"], // 图形坐标位置 左, 右
+            radius: "100%", // 控制饼图的大小
+            startAngle: 90, // 开始位置
+            endAngle: -270, // 结束位置
+            pointer: {
+              // 显示仪表盘指针
+              show: false, // 是否显示仪表盘指针
+            },
+            progress: {
+              // 展示当前进度。
+              show: true, // 是否展示进度条
+              overlap: false, // 是否重叠
+              roundCap: true, // 是否圆顶
+              clip: false, // 是否裁掉超出部分
+              itemStyle: {
+                // 设置圆形
+                color: "#409EFF", // 设置进度条初期式样
+              },
+            },
+            axisLine: {
+              // 设置线条
+              lineStyle: {
+                width: 10, // 线条宽度
+                color: [[1, "#d2eef9"]], // 不透明度, 线条设置背景色
+              },
+            },
+            splitLine: {
+              // 分隔线样式。
+              show: false, // 是否显示分隔线。
+              distance: 0, // 分隔线与轴线的距离。
+              length: 1033, // 分隔线线长。支持相对半径的百分比。
+            },
+            axisTick: {
+              // 刻度样式。
+              show: false, // 是否显示刻度。
+            },
+            axisLabel: {
+              //刻度标签。
+              show: false, // 是否显示标签。
+              distance: 50, // 标签与刻度线的距离。
+            },
+            data: [
+              {
+                name: "战备使用",
+                value: data, // 可写变量  此value 对应 formatter: '{value}%' 中的Value  64类型不对请用'64'
+                detail: {
+                  // 仪表盘边框数据详情，用于显示数据。
+                  valueAnimation: false, // 是否开启标签的数字动画。
+                  offsetCenter: ["5%", "-15%"], // 相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
+                  fontSize: 20, // 文字的字体大小。
+                },
+              },
+            ],
+            detail: {
+              //仪表盘详情，用于显示数据 仪表盘中间数字数据。
+              color: "#1f78b4", // 文本颜色，默认取数值所在的区间的颜色
+              formatter: "{value}%", // 格式化函数或者字符串  formatter: function (value) { return value.toFixed(0);}
+              // width: 20,
+              // height: 14,
+              // fontSize: 14,
+              // borderColor: 'auto',
+              // borderRadius: 20,
+              // borderWidth: 1,
+            },
           },
-        },
-        series: series,
+        ],
       };
-      chartPanel.setOption(option);
 
-      //是否需要label指引线，如果要就添加一个透明的2d饼状图并调整角度使得labelLine和3d的饼状图对齐，并再次setOption
-      option.series.push({
-        name: "pie2d",
-        type: "pie",
-        label: {
-          color: "#fff",
-          fontSize: 10,
-          position: "inner",
-          formatter: "{d}%",
-
-          //   formatter: (item) => {
-          //     //  console.log(item)
-          //     return item.data.name + ":" + item.data.value + "家" + "";
-          //   },
-        },
-        labelLine: {
-          length: 50,
-          length2: 50,
-          lineStyle: {
-            color: "#ffffff",
-            width: 1.5,
-          },
-        },
-        startAngle: 321, //起始角度，支持范围[0, 360]。 //重要
-        clockwise: false, //饼图的扇区是否是顺时针排布。上述这两项配置主要是为了对齐3d的样式
-        radius: ["20%", "70%"],
-        center: ["30%", "60%"],
-        data: this.optionData,
-        itemStyle: {
-          opacity: 0,
-        },
-        top: "-20%",
-        avoidLabelOverlap: true, //防止标签重叠
-      });
-      chartPanel.setOption(option);
+      option && myChart.setOption(option);
     },
+    getLoop2() {
+      var chartDom = document.getElementById("chart-panel2");
+      var myChart = echarts.init(chartDom);
+      var option;
 
-    draw3d2() {
-      let legendData = [];
-      this.optionData.forEach((item) => legendData.push(item.name));
-      // 基于准备好的dom，初始化echarts实例
-      let chartPanel = echarts.init(document.getElementById("chart-panel2"));
-      for (let i = 0; i < this.optionData.length; i++) {
-        delete this.optionData[i].itemStyle.opacity;
-      }
-      // 传入数据生成 option
-      let series = getPie3D(this.optionData, 2);
-      let option = {
+      let data = 65;
+      option = {
         title: {
-          text: "位置分布",
-         textStyle:{
-            color:"#fff",
-            fontSize:14
-         },
-             left:3
-
-        },
-        tooltip: {
-          formatter: (params) => {
-            // console.log(params)
-            if (
-              params.seriesName !== "mouseoutSeries" &&
-              params.seriesName !== "pie2d"
-            ) {
-              return `<div style="padding:0 10px">${params.seriesName}：${(
-                option.series[params.seriesIndex].pieData.proportion * 100
-              ).toFixed(2)}%</div>`;
-            }
-          },
-        },
-        legend: {
-          data: legendData,
-          //   width: "90%",
-          itemGap: 5,
-          bottom: "bottom",
-          right: "right",
+          // 标题组件，包含主标题和副标题
+          text: "S型产品", // 主标题文本，支持使用 \n 换行。
+          top: "0", // title 组件离容器上侧的距离。top 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比，也可以是 'top', 'middle', 'bottom'
+          left: "0", // title 组件离容器左侧的距离。 ...同上
           textStyle: {
-            color: "#fff",
-            fontSize: 10,
+            // 主标题文字的设置
+            fontSize: 16,
+            fontWeight: "normal",
+            color:"#fff"
           },
         },
-        xAxis3D: {
-          min: -1,
-          max: 1,
-        },
-        yAxis3D: {
-          min: -1,
-          max: 1,
-        },
-        zAxis3D: {
-          min: -1,
-          max: 1,
-        },
-
-        grid3D: {
-          show: false, //是否显示三维笛卡尔坐标系。
-          boxHeight: 40, //三维笛卡尔坐标系在三维场景中的高度
-          left: -70,
-         top:10,
-          // environment: "#021041", //背景
-          viewControl: {
-            //用于鼠标的旋转，缩放等视角控制
-            alpha: 40, //角度
-            distance: 180, //调整视角到主体的距离，类似调整zoom 重要
-            rotateSensitivity: 0, //设置为0无法旋转
-            zoomSensitivity: 0, //设置为0无法缩放
-            panSensitivity: 0, //设置为0无法平移
-            autoRotate: false, //自动旋转
+        series: [
+          {
+            type: "gauge", // 测量仪
+            center: ["50%", "50%"], // 图形坐标位置 左, 右
+            radius: "100%", // 控制饼图的大小
+                 startAngle: 90, // 开始位置
+            endAngle: -270, // 结束位置
+            pointer: {
+              // 显示仪表盘指针
+              show: false, // 是否显示仪表盘指针
+            },
+            progress: {
+              // 展示当前进度。
+              show: true, // 是否展示进度条
+              overlap: false, // 是否重叠
+              roundCap: true, // 是否圆顶
+              clip: false, // 是否裁掉超出部分
+              itemStyle: {
+                // 设置圆形
+                color: "#1f78b4", // 设置进度条初期式样
+              },
+            },
+            axisLine: {
+              // 设置线条
+              lineStyle: {
+                width: 10, // 线条宽度
+                color: [[1, "#d2eef9"]], // 不透明度, 线条设置背景色
+              },
+            },
+            splitLine: {
+              // 分隔线样式。
+              show: false, // 是否显示分隔线。
+              distance: 0, // 分隔线与轴线的距离。
+              length: 1033, // 分隔线线长。支持相对半径的百分比。
+            },
+            axisTick: {
+              // 刻度样式。
+              show: false, // 是否显示刻度。
+            },
+            axisLabel: {
+              //刻度标签。
+              show: false, // 是否显示标签。
+              distance: 50, // 标签与刻度线的距离。
+            },
+            data: [
+              {
+                name: "战备使用",
+                nameTextStyle:{
+                  color:"#fff"
+                },
+                value: data, // 可写变量  此value 对应 formatter: '{value}%' 中的Value  64类型不对请用'64'
+                detail: {
+                  // 仪表盘边框数据详情，用于显示数据。
+                  valueAnimation: false, // 是否开启标签的数字动画。
+                  offsetCenter: ["5%", "-15%"], // 相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
+                  fontSize: 20, // 文字的字体大小。
+                },
+              },
+            ],
+            detail: {
+              //仪表盘详情，用于显示数据 仪表盘中间数字数据。
+              color: "#1f78b4", // 文本颜色，默认取数值所在的区间的颜色
+              formatter: "{value}%", // 格式化函数或者字符串  formatter: function (value) { return value.toFixed(0);}
+              // width: 20,
+              // height: 14,
+              // fontSize: 14,
+              // borderColor: 'auto',
+              // borderRadius: 20,
+              // borderWidth: 1,
+            },
           },
-        },
-        series: series,
+        ],
       };
-      chartPanel.setOption(option);
 
-      //是否需要label指引线，如果要就添加一个透明的2d饼状图并调整角度使得labelLine和3d的饼状图对齐，并再次setOption
-      option.series.push({
-        name: "pie2d",
-        type: "pie",
-        label: {
-          color: "#fff",
-          fontSize: 10,
-          position: "inner",
-          formatter: "{d}%",
-
-          //   formatter: (item) => {
-          //     //  console.log(item)
-          //     return item.data.name + ":" + item.data.value + "家" + "";
-          //   },
-        },
-        labelLine: {
-          length: 50,
-          length2: 50,
-          lineStyle: {
-            color: "#ffffff",
-            width: 1.5,
-          },
-        },
-        startAngle: 321, //起始角度，支持范围[0, 360]。 //重要
-        clockwise: false, //饼图的扇区是否是顺时针排布。上述这两项配置主要是为了对齐3d的样式
-        radius: ["20%", "70%"],
-        center: ["30%", "60%"],
-        data: this.optionData,
-        itemStyle: {
-          opacity: 0,
-        },
-        top: "-20%",
-        avoidLabelOverlap: true, //防止标签重叠
-      });
-      chartPanel.setOption(option);
+      option && myChart.setOption(option);
     },
   },
-
-
 };
 </script>
 
 <style lang="scss" scoped>
-
 .dis-box {
   height: 100%;
   .top {

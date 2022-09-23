@@ -30,18 +30,18 @@ export default {
           textStyle: {
               color: "#fff",
             },
-            right:80,
-          bottom: 0,
+          top:0,
+          right: 0,
            orient: 'vertical',
         },
         radar: {
           // shape: 'circle',
           indicator: [
-            { name: "内容1", max: 6500 },
-            { name: "内容2", max: 16000 },
-            { name: "内容3", max: 30000 },
-            { name: "内容4", max: 38000 },
-            { name: "内容5", max: 52000 },
+            { name: "战备效能", max: 6500 },
+            { name: "值班效能", max: 16000 },
+            { name: "反击效能", max: 30000 },
+            { name: "保障效益", max: 38000 },
+            { name: "任务完成度", max: 52000 },
           ],
              textStyle: {
               color: "#fff",
@@ -50,6 +50,10 @@ export default {
         series: [
           {
             type: "radar",
+            gird:{
+              left:0,
+              top:0
+            },
             data: [
               {
                 value: [4200, 3000, 20000, 35000, 50000],
