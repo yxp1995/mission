@@ -67,8 +67,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title-icon {
-  top: 12px !important;
+.item-box {
+  width: 100%;
+  background: url(~@/assets/images/sixteen.png) no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
 }
 .collapse-body {
   width: 100%;
