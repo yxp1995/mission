@@ -2,7 +2,7 @@
   <div class="datacommon-container">
     <div class="main">
       <div class="main-left">
-        <div class="left-top">
+        <!-- <div class="left-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -17,8 +17,8 @@
           <div class="main-container">
             <navigation />
           </div>
-        </div>
-        <div class="left-btm">
+        </div> -->
+        <!-- <div class="left-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -33,7 +33,10 @@
           <div class="main-container">
             <task-edit />
           </div>
-        </div>
+        </div> -->
+        <left-collapse/>
+
+
       </div>
       <div class="main-center">
         <div class="center-top">
@@ -53,7 +56,7 @@
           </div>
         </div>
         <div class="center-btm">
-          <div class="text-title">
+          <!-- <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
@@ -66,8 +69,11 @@
           </div>
     <div class="main-container">
             <task-detail />
-          </div>
+          </div> -->
+             <detail/>
         </div>
+     
+
       </div>
       <div class="main-right">
         <div class="right-top">
@@ -87,7 +93,7 @@
             <using-distribution />
           </div>
         </div>
-        <div class="right-btm">
+        <!-- <div class="right-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -102,28 +108,33 @@
           <div class="main-container">
             <prompt />
           </div>
-        </div>
+        </div> -->
+        <right-collapse/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import navigation from "../taskFlowPlan/navigation.vue";
+// import navigation from "../taskFlowPlan/navigation.vue";
 import usingDistribution from "./usingDistribution.vue";
-import prompt from "./prompt.vue";
-import taskEdit from "./taskEdit.vue";
-import TaskDetail  from "./taskDetail.vue"
+// import prompt from "./prompt.vue";
+// import taskEdit from "./taskEdit.vue";
+import detail  from "./components/detail.vue"
 import middleBar from "./middleBar.vue"
+import leftCollapse from "../taskFlowPlan/components/leftCollapse.vue";
+import rightCollapse from "../taskFlowPlan/components/rightCollapse.vue"
 export default {
   name: "OperationalUsageSituation",
   components: {
-    navigation,
+    // navigation,
     usingDistribution,
-    prompt,
-    taskEdit,
-    TaskDetail,
-    middleBar
+    // prompt,
+    // taskEdit,
+    detail,
+    middleBar,
+    leftCollapse,
+    rightCollapse
   },
   data() {
     return {};
@@ -132,4 +143,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.center-top{
+  height: 55%!important;
+}
+.center-btm{
+  height: 45%!important;
+}
 </style>

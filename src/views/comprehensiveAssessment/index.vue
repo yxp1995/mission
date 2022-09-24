@@ -2,7 +2,7 @@
   <div class="datacommon-container">
     <div class="main">
       <div class="main-left">
-        <div class="left-top">
+        <!-- <div class="left-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -17,8 +17,8 @@
           <div class="main-container">
             <navigation />
           </div>
-        </div>
-        <div class="left-center">
+        </div> -->
+        <!-- <div class="left-center">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -33,8 +33,8 @@
           <div class="main-container">
             <task-choose />
           </div>
-        </div>
-        <div class="left-btm">
+        </div> -->
+        <!-- <div class="left-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -49,7 +49,8 @@
           <div class="main-container">
             <task-edit />
           </div>
-        </div>
+        </div> -->
+        <left-collapse/>
       </div>
       <div class="main-center">
         <div class="center-top">
@@ -141,7 +142,7 @@
             <using-distribution />
           </div>
         </div>
-        <div class="right-btm">
+        <!-- <div class="right-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -156,34 +157,39 @@
           <div class="main-container">
             <prompt />
           </div>
-        </div>
+        </div> -->
+        <right-collapse/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import navigation from "../taskFlowPlan/navigation.vue";
+// import navigation from "../taskFlowPlan/navigation.vue";
 import usingDistribution from "./usingDistribution.vue";
-import prompt from "./prompt.vue";
-import taskEdit from "./taskEdit.vue";
+// import prompt from "./prompt.vue";
+// import taskEdit from "./taskEdit.vue";
 import TaskDetail from "./taskDetail.vue";
 import middleBar from "./middleBar.vue";
-import TaskChoose from "./taskChoose.vue";
+// import TaskChoose from "./taskChoose.vue";
 import TaskTime1 from "./taskTime1.vue";
 import TaskTime2 from "./taskTime2.vue";
+import leftCollapse from "../taskFlowPlan/components/leftCollapse.vue"
+import rightCollapse from "../taskFlowPlan/components/rightCollapse.vue"
 export default {
   name: "OperationalUsageSituation",
   components: {
-    navigation,
+    // navigation,
     usingDistribution,
-    prompt,
-    taskEdit,
+    // prompt,
+    // taskEdit,
     TaskDetail,
     middleBar,
-    TaskChoose,
+    // TaskChoose,
     TaskTime1,
     TaskTime2,
+    leftCollapse,
+    rightCollapse,
   },
   data() {
     return {};
