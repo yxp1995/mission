@@ -43,7 +43,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务流程计划</div>
+            <div class="text-txt">任务流程</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -59,7 +59,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">工序管理</div>
+            <div class="text-txt">工序安排窗口</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -77,7 +77,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">流程数据</div>
+            <div class="text-txt">使用分布</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -87,7 +87,7 @@
             <flow-data />
           </div>
         </div>
-        <div class="right-btm">
+        <!-- <div class="right-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -102,7 +102,8 @@
           <div class="main-container">
             <hint-window />
           </div>
-        </div>
+        </div> -->
+        <right-collapse />
       </div>
     </div>
   </div>
@@ -112,10 +113,11 @@
 // import navigation from "./navigation";
 // import processManagement from "./processManagement";
 import workManagement from "./workManagement";
-import hintWindow from "./hintWindow";
+// import hintWindow from "./hintWindow";
 import processPlan from "./processPlan";
 import flowData from "./flowData";
 import leftCollapse from "./components/leftCollapse";
+import rightCollapse from "./components/rightCollapse";
 export default {
   name: "TaskFlowPlan",
   components: {
@@ -123,9 +125,10 @@ export default {
     // processManagement,
     leftCollapse,
     workManagement,
-    hintWindow,
+    // hintWindow,
     processPlan,
     flowData,
+    rightCollapse,
   },
   data() {
     return {};

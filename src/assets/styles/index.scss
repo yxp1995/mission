@@ -119,6 +119,7 @@ li {
       .main-right {
         width: calc(25% - 30px);
         height: 100%;
+        overflow-y: auto;
 
         .right-top {
           height: 58%;

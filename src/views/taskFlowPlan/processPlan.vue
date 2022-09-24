@@ -45,7 +45,7 @@ export default {
         },
         xAxis: {
           type: "value",
-          name: "时间",
+          name: "日期",
           nameTextStyle: {
             color: "#fff",
           },
@@ -58,7 +58,7 @@ export default {
         },
         yAxis: {
           type: "category",
-          name: "任务编号",
+          name: "流程编号",
           data: (function () {
             let list = [];
             for (let i = 1; i <= 11; i++) {

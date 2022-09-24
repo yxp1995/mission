@@ -2,7 +2,7 @@
   <div class="datacommon-container">
     <div class="main">
       <div class="main-left">
-        <div class="left-top">
+        <!-- <div class="left-top">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -33,7 +33,8 @@
           <div class="main-container">
             <task-edit/>
           </div>
-        </div>
+        </div> -->
+        <left-collapse />
       </div>
       <div class="main-center">
         <div class="center-top">
@@ -42,7 +43,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">任务总览图</div>
+            <div class="text-txt">任务规划</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -58,7 +59,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">产品选择</div>
+            <div class="text-txt">选择产品窗口</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -86,7 +87,7 @@
             <use-distribution />
           </div>
         </div>
-        <div class="right-btm">
+        <!-- <div class="right-btm">
           <div class="text-title">
             <div class="text-img">
               <img src="~@/assets/images/eight.png" alt="" />
@@ -101,28 +102,33 @@
           <div class="main-container">
             <hint-window />
           </div>
-        </div>
+        </div> -->
+        <right-collapse />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import navigation from "./navigation";
-import taskEdit from "./taskEdit";
+// import navigation from "./navigation";
+// import taskEdit from "./taskEdit";
 import productSelection from "./productSelection";
-import hintWindow from "./hintWindow";
+// import hintWindow from "./hintWindow";
 import taskOverview from "./taskOverview";
 import useDistribution from "./useDistribution";
+import leftCollapse from "@/views/taskFlowPlan/components/leftCollapse";
+import rightCollapse from "@/views/taskFlowPlan/components/rightCollapse";
 export default {
   name: "TaskPlanMag",
   components: {
-    navigation,
-    taskEdit,
+    // navigation,
+    // taskEdit,
     productSelection,
-    hintWindow,
+    // hintWindow,
     taskOverview,
     useDistribution,
+    leftCollapse,
+    rightCollapse,
   },
   data() {
     return {};

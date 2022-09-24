@@ -1,24 +1,78 @@
 <template>
   <div class="pro-box">
     <el-row :gutter="20">
-      <el-col :span="16">
-        <el-transfer v-model="transfer" :data="data"></el-transfer>
-      </el-col>
-      <el-col :span="8">
-        <el-row>
-          <el-col :span="16">
-            <div class="linear-text">匹配维修</div>
-            <div class="btn">手动输入</div>
-            <div class="linear-text">选择数量</div>
-            <div class="btn">手动输入</div>
-            <div class="linear-text">选择型号</div>
-            <div class="btn">手动输入</div>
-          </el-col>
-          <el-button size="mini" class="linear">生成</el-button>
-          <el-button size="mini" class="linear">保存</el-button>
-        </el-row>
+      <el-col :span="24" class="radio">
+        <el-radio v-model="queryParams.radio" label="1" class="linear-text">
+          手动选择模式
+        </el-radio>
+        <el-radio v-model="queryParams.radio" label="2" class="linear-text">
+          自动选择模式
+        </el-radio>
       </el-col>
     </el-row>
+    <el-row :gutter="20">
+      <el-col :span="4" class="linear-text">匹配任务名称:</el-col>
+      <el-col :span="7">
+        <el-select v-model="queryParams.taskName" size="mini">
+          <el-option
+            v-for="item in taskList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-col>
+      <el-col :span="4" class="linear-text">匹配任务编号:</el-col>
+      <el-col :span="7">
+        <el-select v-model="queryParams.taskNum" size="mini">
+          <el-option
+            v-for="item in numList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="4" class="linear-text">产品类型:</el-col>
+      <el-col :span="7">
+        <el-select v-model="queryParams.type" size="mini">
+          <el-option
+            v-for="item in typeList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-col>
+      <el-col :span="4" class="linear-text">产品型号:</el-col>
+      <el-col :span="7">
+        <el-select v-model="queryParams.modelNumber" size="mini">
+          <el-option
+            v-for="item in modelList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="4" class="linear-text">选用数量:</el-col>
+      <el-col :span="7">
+        <el-input v-model="queryParams.pitchNum" size="mini"></el-input>
+      </el-col>
+      <el-col :span="4" class="linear-text">备用数量:</el-col>
+      <el-col :span="7">
+        <el-input v-model="queryParams.standbyNum" size="mini"></el-input>
+      </el-col>
+    </el-row>
+    <div class="footer-btn">
+      <el-button class="linear" size="mini">进入</el-button>
+      <el-button class="linear" size="mini">确认</el-button>
+      <el-button class="linear" size="mini">取消</el-button>
+    </div>
   </div>
 </template>
 
@@ -27,16 +81,31 @@ export default {
   name: "ProductSelection",
   data() {
     return {
-      data: [
-        { key: 1, label: "型号名称" },
-        { key: 2, label: "型号名称" },
-        { key: 3, label: "型号名称" },
-        { key: 4, label: "型号名称" },
-        { key: 5, label: "型号名称" },
-        { key: 6, label: "型号名称" },
-        { key: 7, label: "型号名称" },
+      queryParams: {
+        radio: "1",
+        taskName: undefined,
+        taskNum: undefined,
+        type: undefined,
+        modelNumber: undefined,
+        pitchNum: undefined,
+        standbyNum: undefined,
+      },
+      taskList: [
+        { value: 1, label: "任务1" },
+        { value: 2, label: "任务2" },
       ],
-      transfer: [1, 4],
+      numList: [
+        { value: 1, label: "编号1" },
+        { value: 2, label: "编号2" },
+      ],
+      typeList: [
+        { value: 1, label: "类型1" },
+        { value: 2, label: "类型2" },
+      ],
+      modelList: [
+        { value: 1, label: "型号1" },
+        { value: 2, label: "型号2" },
+      ],
     };
   },
 };
@@ -48,70 +117,39 @@ export default {
   color: #fff;
   overflow: auto;
   .el-row {
-    height: 100%;
+    margin-top: 20px;
     .el-col {
-      height: 100%;
-      .el-transfer {
-        height: 100%;
-        :deep(.el-transfer-panel) {
-          width: calc(50% - 38px) !important;
-          height: 100%;
-          background: rgba(0, 0, 0, 0);
-          border: 1px solid #94a9db;
-          .el-transfer-panel__body {
-            height: 100%;
-            overflow: auto;
-            .el-transfer-panel__list {
-              height: fit-content;
-              .el-checkbox__label {
-                color: #fff;
-              }
-            }
-          }
-          .el-transfer-panel__header {
-            display: none;
-          }
-          .el-transfer-panel__item {
-            padding: 0 0 0 20px;
-            margin: 0;
-            text-align: left;
-          }
-        }
+      height: 32px;
+      line-height: 32px;
+      &:nth-child(2n + 1) {
+        text-align: right;
       }
-      :deep(.el-transfer__buttons) {
-        width: 56px;
-        padding: 10px;
-        .el-button {
-          &:nth-child(2) {
-            margin: 0;
-          }
-        }
+      &:nth-child(2n) {
+        text-align: left;
       }
-      .btn {
-        width: 70%;
-        height: 26px;
-        line-height: 26px;
-        border: 1px solid #07dbff;
-        text-align: center;
-        box-shadow: 0 0 10px 2px #07dbff inset;
-        margin: 5px auto;
-        font-size: 14px;
+      &.radio {
+        text-align: left;
+        margin-left: 3%;
       }
-      .linear-text {
-        font-weight: 600;
-        background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 14px;
+    }
+  }
+  .linear-text {
+    font-weight: 600;
+    background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .footer-btn {
+    margin-top: 20px;
+    .linear {
+      background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
+      color: #fff;
+      &:nth-child(1) {
+        margin-right: 5%;
       }
-      .linear {
-        background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
-        color: #fff;
-        margin: 0;
-        &:nth-child(2) {
-          margin: 20% 0 10% 0;
-        }
+      &:nth-child(2) {
+        margin-right: 5%;
       }
     }
   }

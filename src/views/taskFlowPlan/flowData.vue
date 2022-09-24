@@ -1,19 +1,19 @@
 <template>
-  <div class="flow-box">
+  <div class="item-box">
     <el-row>
-      <el-col :span="7">风险度</el-col>
+      <el-col :span="7">任务风险系数</el-col>
       <el-col :span="17">
         <div id="charts1" class="charts1"></div>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="7">效能</el-col>
+      <el-col :span="7">操作时长分布</el-col>
       <el-col :span="17">
         <div id="charts2" class="charts2"></div>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="7">时间分布</el-col>
+      <el-col :span="7">任务人员分布</el-col>
       <el-col :span="17">
         <div id="charts3" class="charts3"></div>
       </el-col>
@@ -31,36 +31,51 @@ export default {
       option1: {
         series: [
           {
-            type: "gauge",
-            center: ["50%", "60%"],
+            type: "gauge", // 测量仪
+            center: ["50%", "50%"], // 图形坐标位置 左, 右
+            radius: "80%", // 控制饼图的大小
             startAngle: 200,
-            endAngle: -20,
+            endAngle: 45,
             min: 0,
             max: 60,
-            splitNumber: 12,
             itemStyle: {
               color: "#FFAB91",
             },
             progress: {
-              show: true,
+              // 展示当前进度。
+              show: true, // 是否展示进度条
+              overlap: false, // 是否重叠
+              roundCap: false, // 是否圆顶
+              clip: false, // 是否裁掉超出部分
               width: 10,
+              itemStyle: {
+                // 设置圆形
+                color: "red", // 设置进度条初期式样
+              },
             },
             pointer: {
-              show: false,
+              // 显示仪表盘指针
+              show: false, // 是否显示仪表盘指针
             },
             axisLine: {
+              // 设置线条
               lineStyle: {
-                width: 10,
+                width: 10, // 线条宽度
+                color: [[1, "#d2eef9"]], // 不透明度, 线条设置背景色
               },
             },
             axisTick: {
-              show: false,
+              // 刻度样式。
+              show: false, // 是否显示刻度。
             },
             splitLine: {
-              show: false,
+              // 分隔线样式。
+              show: false, // 是否显示分隔线。
             },
+
             axisLabel: {
-              show: false,
+              //刻度标签。
+              show: false, // 是否显示标签。
             },
             anchor: {
               show: false,
@@ -79,116 +94,127 @@ export default {
               fontSize: 14,
               fontWeight: "bolder",
               formatter: "{value} %",
-              color: "auto",
+              color: "red",
             },
             data: [
               {
-                value: 20,
-                name: "风险等级",
+                name: "风险度较高",
+                nameTextStyle: { color: "red" },
+                value: 86.4, // 可写变量  此value 对应 formatter: '
               },
             ],
           },
         ],
       },
       option2: {
-        // tooltip: {
-        //   trigger: "item",
-        //   formatter: function (params) {
-        //     const { dataIndex, data } = params;
-        //     if (dataIndex == 1) {
-        //       console.log(data)
-        //       return `<div>占比量:</div><div>${data.value}%</div>`;
-        //     } else {
-        //       return "";
-        //     }
-        //   },
-        // },
-        color: ["#ffffff"],
-        title: {
-          text: ["86.4%", "完成率"].join("\n"),
-          left: "center",
-          top: "40%",
-          textStyle: {
-            color: "#ffffff",
-            fontSize: 14,
+        grid: {
+          left: "15%",
+          bottom: 30,
+          top: "20%",
+          right: "5%",
+        },
+        xAxis: {
+          type: "category",
+          boundaryGap: false,
+          data: ["工作1", "工作2", "工作3", "工作4", "工作5", "工作6", "工作7"],
+          nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#fff",
+            },
+          },
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
           },
         },
-        visualMap: {
-          show: false,
+        yAxis: {
+          type: "value",
+          nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#fff",
+            },
+          },
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
         series: [
           {
-            name: "Access From",
-            type: "pie",
-            radius: ["70%", "80%"],
-            center: ["50%", "55%"],
-            avoidLabelOverlap: false,
-            label: {
-              //将视觉引导图关闭
-              show: false,
+            data: [3, 5, 20, 15, 25, 10, 15],
+            type: "line",
+            areaStyle: {
+              opacity: 0.5,
             },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: "40",
-                fontWeight: "bold",
-              },
-            },
-            labelLine: {
-              show: false,
-            },
-            animationType: "scale",
-            animationEasing: "elasticOut",
-            animationDelay: function () {
-              return Math.random() * 200;
-            },
-            data: [
-              { value: 100 - 86.4, itemStyle: { color: "#253150" } },
-              { value: 86.4, itemStyle: { color: "#0ffdfe" } },
-            ],
           },
         ],
       },
       option3: {
-        tooltip: {
-          trigger: "item",
+        grid: {
+          left: "15%",
+          bottom: 30,
+          top: "20%",
+          right: "5%",
         },
-        legend: {
-          bottom: "0",
-          textStyle: {
+        xAxis: {
+          type: "category",
+          data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+          nameTextStyle: {
             color: "#fff",
           },
+          axisLine: {
+            lineStyle: {
+              color: "#fff",
+            },
+          },
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
+        yAxis: {
+          type: "value",
+          nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#fff",
+            },
+          },
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        },
+
         series: [
           {
-            name: "Access From",
-            type: "pie",
-            radius: "50%",
             data: [
-              { value: 1048, name: "1" },
-              { value: 735, name: "2" },
-              { value: 580, name: "3" },
-              { value: 484, name: "4" },
+              "55",
+              "47",
+              "42",
+              "42",
+              "50",
+              "33",
+              "50",
+              "48",
+              "45",
+              "45",
+              "50",
+              "35",
             ],
-            emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)",
-              },
-            },
+            type: "bar",
+            barWidth: 8,
             itemStyle: {
-              normal: {
-                color: function (colors) {
-                  var colorList = [
-                    "#dd5aff",
-                    "#b8cc54",
-                    "#50cefe",
-                    "#86a5fa",
-                  ];
-                  return colorList[colors.dataIndex];
-                },
-              },
+              // color:"red" //柱子颜色
+              opacity: 0.8,
             },
           },
         ],
@@ -196,7 +222,9 @@ export default {
     };
   },
   mounted() {
-    this.initCharts();
+    this.$nextTick(() => {
+      this.initCharts();
+    });
   },
   methods: {
     initCharts() {
@@ -211,7 +239,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flow-box {
+.item-box {
   height: 100%;
   .el-row {
     height: 35%;
