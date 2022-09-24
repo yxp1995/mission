@@ -69,10 +69,13 @@ export default {
 <style lang="scss" scoped>
 .item-box {
   width: 100%;
-  background: url(~@/assets/images/sixteen.png) no-repeat;
+  // background: url(~@/assets/images/sixteen.png) no-repeat;
+  border: 1px solid #053366;
+  box-shadow: 0 0 10px #053366 inset;
   background-size: 100% 100%;
   box-sizing: border-box;
   padding: 10px 20px 10px 20px;
+  margin-bottom: 10px;
 }
 .collapse-body {
   width: 100%;

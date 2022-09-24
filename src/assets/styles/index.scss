@@ -85,14 +85,19 @@ li {
         .left-top {
           height: 58%;
           padding: 0 10px;
-          background: url(~@/assets/images/sixteen.png) no-repeat;
+          // background: url(~@/assets/images/sixteen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
+          margin-bottom: 10px;
         }
 
         .left-btm {
           height: 38%;
           padding: 0 10px;
-          background: url(~@/assets/images/sixteen.png) no-repeat;
+          // background: url(~@/assets/images/sixteen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
           margin-top: 4%;
         }
@@ -104,13 +109,18 @@ li {
 
         .center-top {
           height: 62%;
-          background: url(~@/assets/images/seventeen.png) no-repeat;
+          // background: url(~@/assets/images/seventeen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
+          margin-bottom: 10px;
         }
 
         .center-btm {
           height: 34%;
-          background: url(~@/assets/images/seventeen.png) no-repeat;
+          // background: url(~@/assets/images/seventeen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
           margin-top: 2%;
         }
@@ -124,14 +134,19 @@ li {
         .right-top {
           height: 58%;
           padding: 0 10px;
-          background: url(~@/assets/images/sixteen.png) no-repeat;
+          // background: url(~@/assets/images/sixteen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
+          margin-bottom: 10px;
         }
 
         .right-btm {
           height: 38%;
           padding: 0 10px;
-          background: url(~@/assets/images/sixteen.png) no-repeat;
+          // background: url(~@/assets/images/sixteen.png) no-repeat;
+          border: 1px solid #053366;
+          box-shadow: 0 0 10px #053366 inset;
           background-size: 100% 100%;
           margin-top: 4%;
         }
@@ -294,23 +309,27 @@ li {
 
 .el-select {
   width: 100%;
-  
-}
-.el-popper .popper__arrow::after {
-  border-bottom-color: #07dbff!important;
-} 
 
-.el-select:hover .el-input__inner{
+}
+
+.el-popper .popper__arrow::after {
+  border-bottom-color: #07dbff !important;
+}
+
+.el-select:hover .el-input__inner {
   border: 1px solid #07dbff;
 }
+
 .el-select-dropdown__item {
   color: #fff;
 }
+
 .el-select-dropdown__item.selected,
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
   color: #fff;
   background: #045274;
 }
+
 .el-select-dropdown__item.hover,
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
   background: #045274;

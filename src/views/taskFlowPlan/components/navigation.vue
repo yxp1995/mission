@@ -17,7 +17,7 @@
         @click="cut"
       />
     </div>
-    <div class="collapse-body" :class="collapseCut?'':'close'">
+    <div class="collapse-body" :class="collapseCut ? '' : 'close'">
       <el-input v-model="queryParams.search" size="mini">
         <el-button slot="append" icon="el-icon-search"></el-button>
       </el-input>
@@ -116,13 +116,16 @@ export default {
 .item-box {
   width: 100%;
   padding: 10px 20px 10px 20px;
-  background: url(~@/assets/images/sixteen.png) no-repeat;
+  // background: url(~@/assets/images/sixteen.png) no-repeat;
   background-size: 100% 100%;
   box-sizing: border-box;
+  border: 1px solid #053366;
+  box-shadow: 0 0 10px #053366 inset;
+  margin-bottom: 10px;
   .collapse-body {
     width: 100%;
     height: 200px;
-    transition: height .5s ease;
+    transition: height 0.5s ease;
     overflow: hidden;
     .el-row {
       margin-top: 10px;
@@ -145,7 +148,7 @@ export default {
   .collapse-body.close {
     height: 0px;
     overflow: hidden;
-    transition: height .5s ease;
+    transition: height 0.5s ease;
   }
 }
 </style>
