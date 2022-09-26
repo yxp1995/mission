@@ -309,19 +309,20 @@ li {
         height: 100%;
         .center-top {
           height: 45%;
-          background: url(~@/assets/images/seventeen.png) no-repeat;
-          background-size: 100% 100%;
+          // background: url(~@/assets/images/seventeen.png) no-repeat;
+          // background-size: 100% 100%;
         }
 
         .center-btm {
           height: 24%;
-          background: url(~@/assets/images/seventeen.png) no-repeat;
-          background-size: 100% 100%;
+          // background: url(~@/assets/images/seventeen.png) no-repeat;
+          // background-size: 100% 100%;
         }
         .center-bottom {
           height: 28%;
-          background: url(~@/assets/images/seventeen.png) no-repeat;
+          // background: url(~@/assets/images/seventeen.png) no-repeat;
           background-size: 100% 100%;
+            margin-top: 1%;
 
           display: flex;
           .center-bottom-left {
@@ -346,8 +347,8 @@ li {
         .right-top {
           height: 58%;
           padding: 0 10px;
-          background: url(~@/assets/images/sixteen.png) no-repeat;
-          background-size: 100% 100%;
+          // background: url(~@/assets/images/sixteen.png) no-repeat;
+          // background-size: 100% 100%;
         }
 
         .right-btm {
