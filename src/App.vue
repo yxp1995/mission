@@ -4,7 +4,7 @@
     <div class="datacommon-frame">
       <div class="datacommon-title">
         <img src="~@/assets/images/one.png" class="title-img" />
-        <div class="title-txt">XXXXXX数据管理系统</div>
+        <div class="title-txt">XXXXXX作战使用效能评估系统V1.0</div>
         <img src="~@/assets/images/two.png" class="title-img" />
       </div>
       <router-view />
