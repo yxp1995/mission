@@ -26,38 +26,38 @@ export default {
 
       option = {
         legend: {
-          data: ["2013", "2014", "2015", "2016"],
+          data: ["2016", "2017", "2018"],
           textStyle: {
-              color: "#fff",
-            },
-          top:0,
+            color: "#fff",
+          },
+          top: 0,
           right: 0,
-           orient: 'vertical',
+          orient: "vertical",
         },
         radar: {
           // shape: 'circle',
           indicator: [
-            { name: "战备效能", max: 6500 },
-            { name: "值班效能", max: 16000 },
-            { name: "反击效能", max: 30000 },
-            { name: "保障效益", max: 38000 },
-            { name: "任务完成度", max: 52000 },
+            { name: "战备效能", max: 70 },
+            { name: "值班效能", max: 50 },
+            { name: "反击效能", max: 50 },
+            { name: "保障效益", max: 1 },
+            { name: "任务饱和度", max: 100 },
           ],
-             textStyle: {
-              color: "#fff",
-            },
+          textStyle: {
+            color: "#fff",
+          },
         },
         series: [
           {
             type: "radar",
-            gird:{
-              left:0,
-              top:0
+            gird: {
+              left: 0,
+              top: 0,
             },
             data: [
               {
-                value: [4200, 3000, 20000, 35000, 50000],
-                name: "2013",
+                value: [15.821, 11.454, 8.210, 0.762, 71.25],
+                name: "2016",
                 areaStyle: {
                   // 区域样式
                   color: "#409EFF",
@@ -74,15 +74,13 @@ export default {
                 },
               },
               {
-                value: [5000, 14000, 28000, 26000, 42000],
-                name: "2014",
+                value: [24.362, 15.372, 11.864, 0.821, 85.36],
+                name: "2017",
                 areaStyle: {
-                  // 区域样式
                   color: "#ee6666",
                   opacity: 0.5,
                 },
                 itemStyle: {
-                  //阴影部分的边框
                   normal: {
                     color: "#ee6666",
                     lineStyle: {
@@ -92,37 +90,17 @@ export default {
                 },
               },
               {
-                value: [3500, 3000, 10000, 25000, 30000],
-                name: "2015",
+                value: [31.234, 24.537, 16.722, 0.751, 91.35],
+                name: "2018",
                 areaStyle: {
-                  // 区域样式
                   color: "#5470c6",
                   opacity: 0.5,
                 },
                 itemStyle: {
-                  //阴影部分的边框
                   normal: {
                     color: "#5470c6",
                     lineStyle: {
                       color: "#5470c6",
-                    },
-                  },
-                },
-              },
-              {
-                value: [6200, 3700, 20300, 15000, 20000],
-                name: "2016",
-                areaStyle: {
-                  // 区域样式
-                  color: "#fc8452",
-                  opacity: 0.5,
-                },
-                itemStyle: {
-                  //阴影部分的边框
-                  normal: {
-                    color: "#fc8452",
-                    lineStyle: {
-                      color: "#fc8452",
                     },
                   },
                 },
@@ -146,6 +124,5 @@ export default {
 #item {
   width: 100%;
   height: 100%;
- 
 }
 </style>

@@ -45,8 +45,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["1", "2", "3", "4", "5", "6"],
-
+          data: ["1", "2", "3", "4", "5", "6","7","8","9","10"],
           show: false,
         },
         yAxis: {
@@ -54,17 +53,17 @@ export default {
         },
         series: [
           {
-            name: "认证中",
+            name: "人次",
             type: "line",
 
-            data: [220, 182, 191, 234, 290, 330, 310],
+            data: [65,49, 4,84,55,81,36,32,59,3, ],
           },
-          {
-            name: "已检测",
-            type: "line",
+          // {
+          //   name: "已检测",
+          //   type: "line",
 
-            data: [150, 232, 201, 154, 190, 330, 410],
-          },
+          //   data: [150, 232, 201, 154, 190, 330, 410],
+          // },
         ],
       };
 
