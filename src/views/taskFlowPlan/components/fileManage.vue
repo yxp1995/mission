@@ -19,7 +19,20 @@
     </div>
     <div class="collapse-body" :class="collapseCut ? '' : 'close'">
       <el-row :gutter="20">
-        <el-col :span="8" class="linear-text">文件类型</el-col>
+        <el-col :span="8" class="linear-text">项目类型</el-col>
+        <el-col :span="16">
+          <el-select v-model="queryParams.project" size="mini">
+            <el-option
+              v-for="item in projectList"
+              :key="item.value"
+              :value="item.value"
+              :label="item.label"
+            ></el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="8" class="linear-text">文档名称</el-col>
         <el-col :span="16">
           <el-select v-model="queryParams.file" size="mini">
             <el-option
@@ -33,11 +46,14 @@
       </el-row>
       <div class="footer-btn">
         <el-button class="linear" size="mini">编辑</el-button>
-        <el-button class="linear" size="mini">载入</el-button>
+        <el-button class="linear" size="mini">取消</el-button>
       </div>
       <div class="footer-btn">
+        <el-button class="linear" size="mini">导入</el-button>
         <el-button class="linear" size="mini">导出</el-button>
-        <el-button class="linear" size="mini">更新</el-button>
+      </div>
+      <div class="footer-btn2">
+        <el-button class="linear" size="mini">模板设置</el-button>
       </div>
     </div>
   </div>
@@ -51,10 +67,19 @@ export default {
       collapseCut: true,
       queryParams: {
         file: undefined,
+        project: undefined,
       },
+      projectList: [
+        { value: 1, label: "任务规划" },
+        { value: 2, label: "流程计划" },
+        { value: 3, label: "效能评估" },
+        { value: 4, label: "系统数据" },
+      ],
       fileList: [
-        { value: 1, label: "文件1" },
-        { value: 2, label: "文件2" },
+        { value: 1, label: "任务规划文档" },
+        { value: 2, label: "产品动用文档" },
+        { value: 3, label: "流程计划文档" },
+        { value: 4, label: "工序安排文档" },
       ],
     };
   },
@@ -78,7 +103,7 @@ export default {
   margin-bottom: 10px;
   .collapse-body {
     width: 100%;
-    height: 184px;
+    height: 274px;
     transition: height 0.5s ease;
     overflow: hidden;
     .el-row {
@@ -116,6 +141,17 @@ export default {
     height: 0px;
     overflow: hidden;
     transition: height 0.5s ease;
+  }
+}
+
+.footer-btn2 {
+  margin-top: 30px;
+  .linear {
+    background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
+    color: #fff;
+    &:nth-child(1) {
+      margin-right: 33%;
+    }
   }
 }
 </style>

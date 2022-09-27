@@ -32,7 +32,7 @@
         </el-col>
       </el-row>
       <el-row :gutter="20">
-        <el-col :span="8" class="linear-text">图形选项</el-col>
+        <el-col :span="8" class="linear-text">图像操作选项</el-col>
         <el-col :span="16">
           <el-select v-model="queryParams.graph" size="mini">
             <el-option
@@ -124,12 +124,19 @@ export default {
         fontColor: undefined,
       },
       backList: [
-        { value: 1, label: "背景1" },
-        { value: 2, label: "背景2" },
+        { value: 1, label: "红色" },
+        { value: 2, label: "蓝色" },
+        { value: 3, label: "绿色" },
       ],
       graphList: [
-        { value: 1, label: "图形1" },
-        { value: 2, label: "图形2" },
+        { value: 1, label: "战训态势图" },
+        { value: 2, label: "任务规划图" },
+        { value: 3, label: "流程计划图" },
+        { value: 4, label: "综合雷达图" },
+        { value: 5, label: "战储分布图" },
+        { value: 6, label: "动用分布图" },
+        { value: 7, label: "任务分析图" },
+        { value: 8, label: "战备分析图" },
       ],
       borderList: [
         { value: 1, label: "虚线" },

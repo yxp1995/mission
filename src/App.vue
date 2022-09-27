@@ -35,7 +35,7 @@
         </li>
         <li :class="num == 5 ? 'active' : ''">
           <div class="bgc">
-            <router-link to="/dataMag">数据管理</router-link>
+            <router-link to="/dataMag">系统数据管理</router-link>
           </div>
         </li>
       </ul>
