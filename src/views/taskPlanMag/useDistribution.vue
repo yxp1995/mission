@@ -1,6 +1,8 @@
 <template>
   <div class="dis-box">
+    <div class="txt">Z型产品</div>
     <div ref="chartPanel" id="chart-panel" class="top"></div>
+    <div class="txt">S型产品</div>
     <div ref="chartPanel2" id="chart-panel2" class="btm"></div>
   </div>
 </template>
@@ -24,17 +26,6 @@ export default {
       var option;
 
       option = {
-        title: {
-          text: "Z型产品",
-          top: "0",
-          left: "0",
-          textStyle: {
-            // 主标题文字的设置
-            fontSize: 16,
-            fontWeight: "normal",
-            color: "#fff",
-          },
-        },
         tooltip: {
           trigger: "item",
         },
@@ -54,12 +45,7 @@ export default {
             itemStyle: {
               normal: {
                 color: function (colors) {
-                  var colorList = [
-                    "#51ccff",
-                    "#85a4fa",
-                    "#de58ff",
-                    "#b8cb55",
-                  ];
+                  var colorList = ["#51ccff", "#85a4fa", "#de58ff", "#b8cb55"];
                   return colorList[colors.dataIndex];
                 },
               },
@@ -90,17 +76,6 @@ export default {
       var option;
 
       option = {
-        title: {
-          text: "S型产品",
-          top: "0",
-          left: "0",
-          textStyle: {
-            // 主标题文字的设置
-            fontSize: 16,
-            fontWeight: "normal",
-            color: "#fff",
-          },
-        },
         tooltip: {
           trigger: "item",
         },
@@ -120,12 +95,7 @@ export default {
             itemStyle: {
               normal: {
                 color: function (colors) {
-                  var colorList = [
-                    "#51ccff",
-                    "#85a4fa",
-                    "#de58ff",
-                    "#b8cb55",
-                  ];
+                  var colorList = ["#51ccff", "#85a4fa", "#de58ff", "#b8cb55"];
                   return colorList[colors.dataIndex];
                 },
               },
@@ -159,12 +129,21 @@ export default {
   overflow: auto;
   .top {
     width: 100%;
-    height: calc(50% - 8px);
+    height: calc(50% - 29px);
   }
   .btm {
     width: 100%;
-    height: calc(50% - 8px);
+    height: calc(50% - 29px);
     margin-top: 16px;
+  }
+  .txt {
+    height: 21px;
+    text-align: left;
+    font-weight: 600;
+    background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 </style>

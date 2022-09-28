@@ -6,18 +6,10 @@
         <div id="charts1" class="charts1"></div>
       </el-col>
     </el-row>
-    <el-row>
-      <el-col :span="7">操作时长分布</el-col>
-      <el-col :span="17">
-        <div id="charts2" class="charts2"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="7">任务人员分布</el-col>
-      <el-col :span="17">
-        <div id="charts3" class="charts3"></div>
-      </el-col>
-    </el-row>
+    <div class="txt">操作时长分布</div>
+    <div id="charts2" class="charts2"></div>
+    <div class="txt">任务人员分布</div>
+    <div id="charts3" class="charts3"></div>
   </div>
 </template>
 
@@ -31,22 +23,10 @@ export default {
       option1: {
         series: [
           {
-            type: "gauge", // 测量仪
-            center: ["50%", "50%"], // 图形坐标位置 左, 右
-            radius: "80%", // 控制饼图的大小
-            startAngle: 200,
-            endAngle: 45,
-            min: 0,
-            max: 60,
-            itemStyle: {
-              color: "#FFAB91",
-            },
+            name: "Pressure",
+            type: "gauge",
             progress: {
-              // 展示当前进度。
-              show: true, // 是否展示进度条
-              overlap: false, // 是否重叠
-              roundCap: false, // 是否圆顶
-              clip: false, // 是否裁掉超出部分
+              show: true,
               width: 10,
               itemStyle: {
                 // 设置圆形
@@ -54,15 +34,7 @@ export default {
               },
             },
             pointer: {
-              // 显示仪表盘指针
-              show: false, // 是否显示仪表盘指针
-            },
-            axisLine: {
-              // 设置线条
-              lineStyle: {
-                width: 10, // 线条宽度
-                color: [[1, "#d2eef9"]], // 不透明度, 线条设置背景色
-              },
+              show: false,
             },
             axisTick: {
               // 刻度样式。
@@ -72,13 +44,9 @@ export default {
               // 分隔线样式。
               show: false, // 是否显示分隔线。
             },
-
             axisLabel: {
               //刻度标签。
               show: false, // 是否显示标签。
-            },
-            anchor: {
-              show: false,
             },
             title: {
               show: true,
@@ -110,7 +78,7 @@ export default {
         grid: {
           left: "15%",
           bottom: 30,
-          top: "20%",
+          top: "10%",
           right: "5%",
         },
         xAxis: {
@@ -158,7 +126,7 @@ export default {
       option3: {
         grid: {
           left: "15%",
-          bottom: 30,
+          bottom: "30%",
           top: "20%",
           right: "5%",
         },
@@ -179,6 +147,7 @@ export default {
           },
         },
         yAxis: {
+          name: "人数",
           type: "value",
           nameTextStyle: {
             color: "#fff",
@@ -261,13 +230,25 @@ export default {
     width: 100%;
     height: 100%;
   }
+  .txt {
+    height: 21px;
+    text-align: left;
+    font-weight: 600;
+    background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &:nth-child(4) {
+      margin-bottom: 10px;
+    }
+  }
   .charts2 {
     width: 100%;
-    height: 100%;
+    height: calc(35% - 21px);
   }
   .charts3 {
     width: 100%;
-    height: 100%;
+    height: calc(35% - 34px);
   }
 }
 </style>

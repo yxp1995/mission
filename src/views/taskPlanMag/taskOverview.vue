@@ -40,14 +40,17 @@ export default {
         grid: {
           left: "3%",
           right: "4%",
-          bottom: "3%",
+          bottom: "10%",
+          top: "0%",
           containLabel: true,
         },
         xAxis: {
+          position: "top",
           type: "value",
           name: "日期",
           nameTextStyle: {
             color: "#fff",
+            align: "right",
           },
           axisLine: {
             show: true,
@@ -55,17 +58,17 @@ export default {
               color: "#fff",
             },
           },
+          splitLine: {
+            show: false
+          },
+          min: 1,
+          splitNumber: 10
         },
         yAxis: {
           type: "category",
           name: "任务编号",
-          data: (function () {
-            let list = [];
-            for (let i = 1; i <= 11; i++) {
-              list.push(i);
-            }
-            return list;
-          })(),
+          data:[1234, 2345, 3456, 4567, 5678],
+          nameLocation: "start",
           nameTextStyle: {
             color: "#fff",
           },
@@ -73,6 +76,9 @@ export default {
             lineStyle: {
               color: "#fff",
             },
+          },
+          splitLine: {
+            show: true,
           },
         },
         series: [
@@ -90,7 +96,7 @@ export default {
                 color: "transparent",
               },
             },
-            data: [1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            data: [4, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
           },
           {
             name: "Income",

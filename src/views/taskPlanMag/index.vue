@@ -54,17 +54,6 @@
           </div>
         </div>
         <div class="center-btm">
-          <div class="text-title">
-            <div class="text-img">
-              <img src="~@/assets/images/eight.png" alt="" />
-              <img src="~@/assets/images/seven.png" alt="" />
-            </div>
-            <div class="text-txt">选择产品窗口</div>
-            <div class="text-img">
-              <img src="~@/assets/images/seven.png" alt="" />
-              <img src="~@/assets/images/nine.png" alt="" />
-            </div>
-          </div>
           <div class="main-container">
             <product-selection/>
           </div>

@@ -40,14 +40,17 @@ export default {
         grid: {
           left: "3%",
           right: "4%",
-          bottom: "3%",
+          bottom: "10%",
+          top: "0%",
           containLabel: true,
         },
         xAxis: {
+          position: "top",
           type: "value",
           name: "日期",
           nameTextStyle: {
             color: "#fff",
+            align: "right",
           },
           axisLine: {
             show: true,
@@ -55,17 +58,23 @@ export default {
               color: "#fff",
             },
           },
+          splitLine: {
+            show: false
+          },
+          min: 1,
+          splitNumber: 10
         },
         yAxis: {
           type: "category",
           name: "流程编号",
           data: (function () {
             let list = [];
-            for (let i = 1; i <= 11; i++) {
-              list.push(i);
+            for (let i = 1; i <= 5; i++) {
+              list.push(`流程${i}`);
             }
             return list;
           })(),
+          nameLocation: "start",
           nameTextStyle: {
             color: "#fff",
           },
@@ -73,6 +82,9 @@ export default {
             lineStyle: {
               color: "#fff",
             },
+          },
+          splitLine: {
+            show: true,
           },
         },
         series: [
@@ -90,7 +102,7 @@ export default {
                 color: "transparent",
               },
             },
-            data: [1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            data: [4, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
           },
           {
             name: "Income",
