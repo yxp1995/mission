@@ -221,7 +221,7 @@ li {
   width: 100%;
   height: 100vh;
   min-width: 1366px;
-  min-height: 768;
+  min-height: 768px;
   background: url(../../assets/images/three.png) no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
