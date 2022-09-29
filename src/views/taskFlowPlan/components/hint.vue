@@ -26,9 +26,9 @@
       <div class="seamless-warp">
         <ul class="item">
           <li v-for="(item, i) in unitOutList" :key="i">
-            <span>{{ item.a }}</span>
-            <span>{{ item.name }}</span>
-            <span>{{ item.code }}</span>
+            <span>{{ item.taskName }}</span>
+            <span>{{ item.suggest }}</span>
+            <span>{{ item.supplement }}</span>
           </li>
         </ul>
       </div>
@@ -37,30 +37,18 @@
 </template>
 
 <script>
+import { rightCollapse } from "@/assets/jsonData";
 export default {
   name: "Hint",
   data() {
     return {
       collapseCut: true,
-      unitOutList: [],
+      unitOutList: rightCollapse.unitOutList,
     };
-  },
-  created() {
-    this.getList();
   },
   methods: {
     cut() {
       this.collapseCut = !this.collapseCut;
-    },
-    getList() {
-      for (let i = 0; i < 18; i++) {
-        const obj = {
-          a: i + 1,
-          name: "系统维护",
-          code: "XXX",
-        };
-        this.unitOutList.push(obj);
-      }
     },
   },
 };

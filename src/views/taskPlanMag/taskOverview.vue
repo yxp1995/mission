@@ -4,6 +4,7 @@
 
 <script>
 import * as echarts from "echarts";
+import { taskPlanMag } from "@/assets/jsonData";
 export default {
   name: "TaskOverview",
   data() {
@@ -59,15 +60,15 @@ export default {
             },
           },
           splitLine: {
-            show: false
+            show: false,
           },
           min: 1,
-          splitNumber: 10
+          splitNumber: 10,
         },
         yAxis: {
           type: "category",
           name: "任务编号",
-          data:[1234, 2345, 3456, 4567, 5678],
+          data: taskPlanMag.taskOverview.yAxis,
           nameLocation: "start",
           nameTextStyle: {
             color: "#fff",
@@ -96,7 +97,7 @@ export default {
                 color: "transparent",
               },
             },
-            data: [4, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            data: taskPlanMag.taskOverview.baseLine,
           },
           {
             name: "Income",
@@ -106,7 +107,7 @@ export default {
               show: true,
               position: "top",
             },
-            data: [3.5, 4.2, 5, "-", "-", 8, 9, 10, "-", "-", "-"],
+            data: taskPlanMag.taskOverview.one,
             itemStyle: {
               //这里是颜色
               color: function (p) {
@@ -124,7 +125,7 @@ export default {
               show: true,
               position: "bottom",
             },
-            data: ["-", "-", "-", 6, 7, "-", "-", "-", 11, 12, 13],
+            data: taskPlanMag.taskOverview.two,
             itemStyle: {
               //这里是颜色
               color: function (p) {

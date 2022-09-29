@@ -9,6 +9,7 @@
 
 <script>
 import * as echarts from "echarts";
+import { taskPlanMag } from "@/assets/jsonData";
 export default {
   name: "UseDistribution",
   data() {
@@ -50,12 +51,7 @@ export default {
                 },
               },
             },
-            data: [
-              { value: 20, name: "不能用" },
-              { value: 18, name: "战备" },
-              { value: 49, name: "值班" },
-              { value: 13, name: "未用" },
-            ],
+            data: taskPlanMag.useDistribution.optionZ,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -100,12 +96,7 @@ export default {
                 },
               },
             },
-            data: [
-              { value: 1048, name: "维修" },
-              { value: 735, name: "贮存" },
-              { value: 580, name: "值班" },
-              { value: 484, name: "战备" },
-            ],
+            data: taskPlanMag.useDistribution.optionS,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,

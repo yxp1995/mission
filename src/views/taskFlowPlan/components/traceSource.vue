@@ -26,7 +26,7 @@
       <div class="seamless-warp">
         <ul class="item">
           <li v-for="(item, i) in unitOutList" :key="i">
-            <span>{{ item.a }}</span>
+            <span>{{ item.user }}</span>
             <span>{{ item.name }}</span>
             <span>{{ item.code }}</span>
           </li>
@@ -37,30 +37,18 @@
 </template>
 
 <script>
+import { leftCollapse } from "@/assets/jsonData";
 export default {
   name: "TraceSource",
   data() {
     return {
       collapseCut: true,
-      unitOutList: [],
+      unitOutList: leftCollapse.unitOutList,
     };
-  },
-  created() {
-    this.getList();
   },
   methods: {
     cut() {
       this.collapseCut = !this.collapseCut;
-    },
-    getList() {
-      for (let i = 0; i < 18; i++) {
-        const obj = {
-          a: i+1,
-          name: "系统维护",
-          code: "XXX",
-        };
-        this.unitOutList.push(obj);
-      }
     },
   },
 };

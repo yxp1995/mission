@@ -15,6 +15,7 @@
 
 <script>
 import * as echarts from "echarts";
+import { taskFlowPlan } from "@/assets/jsonData";
 export default {
   name: "FlowData",
   data() {
@@ -68,7 +69,7 @@ export default {
               {
                 name: "风险度较高",
                 nameTextStyle: { color: "red" },
-                value: 86.4, // 可写变量  此value 对应 formatter: '
+                value: taskFlowPlan.flowData.riskFactor, // 可写变量  此value 对应 formatter: '
               },
             ],
           },
@@ -84,7 +85,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["工作1", "工作2", "工作3", "工作4", "工作5", "工作6", "工作7"],
+          data: taskFlowPlan.flowData.operationTime.xAxis,
           nameTextStyle: {
             color: "#fff",
           },
@@ -115,7 +116,7 @@ export default {
         },
         series: [
           {
-            data: [3, 5, 20, 15, 25, 10, 15],
+            data: taskFlowPlan.flowData.operationTime.yAxis,
             type: "line",
             areaStyle: {
               opacity: 0.5,
@@ -132,7 +133,7 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+          data: taskFlowPlan.flowData.personnelDistribution.xAxis,
           nameTextStyle: {
             color: "#fff",
           },
@@ -165,20 +166,7 @@ export default {
 
         series: [
           {
-            data: [
-              "55",
-              "47",
-              "42",
-              "42",
-              "50",
-              "33",
-              "50",
-              "48",
-              "45",
-              "45",
-              "50",
-              "35",
-            ],
+            data: taskFlowPlan.flowData.personnelDistribution.yAxis,
             type: "bar",
             barWidth: 8,
             itemStyle: {

@@ -139,8 +139,8 @@ export default {
       typeList: [
         { value: 1, label: "抽试" },
         { value: 2, label: "真品" },
-        { value: 2, label: "训练" },
-        { value: 2, label: "模拟" },
+        { value: 3, label: "训练" },
+        { value: 4, label: "模拟" },
       ],
       modelList: [
         { value: 1, label: "E型" },
