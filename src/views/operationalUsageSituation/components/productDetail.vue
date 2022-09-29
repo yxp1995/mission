@@ -2,7 +2,7 @@
   <div class="pollutions">
     <ul class="th">
         <li>序号</li>
-      <li>任务编号</li>
+      <li>产品编号</li>
       <li>产品名称</li>
       <li>产品类别</li>
       <li>产品位置</li>
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     getList() {
-      for (let i = 0; i < 18; i++) {
+      for (let i = 0; i < 5; i++) {
         const obj = {
           code: "12345",
           productName: "文字可修改",

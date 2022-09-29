@@ -3,13 +3,13 @@
     <ul class="th">
       <li>序号</li>
       <li>任务编号</li>
-      <li>产品名称</li>
-      <li>产品类别</li>
-      <li>产品位置</li>
+      <li>任务名称</li>
+      <li>任务性质</li>
+      <li>任务类别</li>
       <li>开始时间</li>
       <li>结束时间</li>
       <li>动用产品</li>
-      <li>战备动用时间</li>
+      <li>XX计划</li>
     </ul>
     <div class="seamless-warp">
       <ul class="item">
@@ -21,8 +21,9 @@
           <span>{{ item.productPosition }}</span>
           <span>{{ item.startTime }}</span>
           <span>{{ item.endTime }}</span>
-          <span>{{ item.useProduct }}</span>
-          <span>{{ item.useTime }}</span>
+           <el-button class="linear" size="mini">上一页</el-button>
+    
+         <el-button class="linear" size="mini">下一页</el-button> 
         </li>
       </ul>
     </div>
@@ -42,7 +43,7 @@ export default {
   },
   methods: {
     getList() {
-      for (let i = 0; i < 18; i++) {
+      for (let i = 0; i < 5; i++) {
         const obj = {
           code: "12345",
           productName: "文字可修改",
@@ -68,7 +69,18 @@ export default {
 .pollutions .th {
   font-size: 10px !important;
 }
-.item li span {
+:deep(.datacommon .pollutions .seamless-warp .item li span){
   font-size: 10px !important;
+}
+ .linear {
+    background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
+    color: #fff;
+     
+  }
+:deep(.el-button--mini){
+  padding:4px 8px
+}
+:deep(.el-button--mini.is-round){
+   padding:4px 8px
 }
 </style>
