@@ -1,9 +1,10 @@
 <template>
- <div id="charts" class="charts"></div>
+  <div id="charts" class="charts"></div>
 </template>
 
 <script>
 import * as echarts from "echarts";
+import { taskFlowPlan } from "@/assets/jsonData";
 export default {
   name: "middleBar",
   data() {
@@ -40,35 +41,35 @@ export default {
         grid: {
           left: "3%",
           right: "4%",
-          bottom: "3%",
+          bottom: "10%",
+          top: "0%",
           containLabel: true,
         },
         xAxis: {
-          position:"top",
+          position: "top",
           type: "value",
           name: "日期",
           nameTextStyle: {
             color: "#fff",
+            align: "right",
           },
-          
           axisLine: {
             show: true,
             lineStyle: {
               color: "#fff",
             },
           },
+          splitLine: {
+            show: false,
+          },
+          min: 1,
+          splitNumber: 10,
         },
         yAxis: {
           type: "category",
-          name: "任务编号",
-          nameLocation:"end",
-          data: (function () {
-            let list = [];
-            for (let i = 1; i <= 11; i++) {
-              list.push(i);
-            }
-            return list;
-          })(),
+          name: "流程编号",
+          data: taskFlowPlan.processPlan.yAxis,
+          nameLocation: "start",
           nameTextStyle: {
             color: "#fff",
           },
@@ -76,6 +77,9 @@ export default {
             lineStyle: {
               color: "#fff",
             },
+          },
+          splitLine: {
+            show: true,
           },
         },
         series: [
@@ -93,7 +97,7 @@ export default {
                 color: "transparent",
               },
             },
-            data: [1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            data: taskFlowPlan.processPlan.baseLine,
           },
           {
             name: "Income",
@@ -103,7 +107,7 @@ export default {
               show: true,
               position: "top",
             },
-            data: [3.5, 4.2, 5, "-", "-", 8, 9, 10, "-", "-", "-"],
+            data: taskFlowPlan.processPlan.one,
             itemStyle: {
               //这里是颜色
               color: function (p) {
@@ -121,7 +125,7 @@ export default {
               show: true,
               position: "bottom",
             },
-            data: ["-", "-", "-", 6, 7, "-", "-", "-", 11, 12, 13],
+            data: taskFlowPlan.processPlan.two,
             itemStyle: {
               //这里是颜色
               color: function (p) {
@@ -141,11 +145,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.box{
-  width: 100%;
-  height: 100%;
-}
 .charts {
   height: 100%;
 }

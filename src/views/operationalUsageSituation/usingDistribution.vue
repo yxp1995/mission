@@ -1,14 +1,17 @@
 <template>
   <div class="dis-box">
+    <div class="txt">Z型产品</div>
     <div ref="chartPanel" id="chart-panel" class="top"></div>
-
+    <div class="txt">S型产品</div>
     <div ref="chartPanel2" id="chart-panel2" class="btm"></div>
   </div>
 </template>
 
 <script>
 import * as echarts from "echarts";
+import { taskPlanMag } from "@/assets/jsonData";
 export default {
+  name: "UseDistribution",
   data() {
     return {};
   },
@@ -24,21 +27,9 @@ export default {
       var option;
 
       option = {
-        title: {
-          text: "Z型产品",
-          top:"0",
-          left: "0",
-            textStyle: {
-            // 主标题文字的设置
-            fontSize: 16,
-            fontWeight: "normal",
-            color:"#fff"
-          },
-        },
         tooltip: {
           trigger: "item",
         },
- 
 
         series: [
           {
@@ -51,13 +42,16 @@ export default {
                 formatter: "{b} {d}%", //自定义显示格式(b:name, c:value, d:百分比)
               },
             },
-       center:["50%","80"],
-            data: [
-              { value: 1048, name: "维修" },
-              { value: 735, name: "贮存" },
-              { value: 580, name: "值班" },
-              { value: 484, name: "战备" },
-            ],
+            center: ["50%", "80"],
+            itemStyle: {
+              normal: {
+                color: function (colors) {
+                  var colorList = ["#51ccff", "#85a4fa", "#de58ff", "#b8cb55"];
+                  return colorList[colors.dataIndex];
+                },
+              },
+            },
+            data: taskPlanMag.useDistribution.optionZ,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -78,40 +72,31 @@ export default {
       var option;
 
       option = {
-        title: {
-          text: "S型产品",
-          top:"0",
-          left: "0",
-          textStyle: {
-            // 主标题文字的设置
-            fontSize: 16,
-            fontWeight: "normal",
-            color:"#fff"
-          },
-          
-        },
         tooltip: {
           trigger: "item",
         },
- 
+
         series: [
           {
             name: "S型产品",
             type: "pie",
             radius: "70%",
-                  center:["50%","80"],
+            center: ["50%", "80"],
             label: {
               normal: {
                 show: true,
                 formatter: "{b} {d}%", //自定义显示格式(b:name, c:value, d:百分比)
               },
             },
-            data: [
-              { value: 1048, name: "维修" },
-              { value: 735, name: "贮存" },
-              { value: 580, name: "值班" },
-              { value: 484, name: "战备" },
-            ],
+            itemStyle: {
+              normal: {
+                color: function (colors) {
+                  var colorList = ["#51ccff", "#85a4fa", "#de58ff", "#b8cb55"];
+                  return colorList[colors.dataIndex];
+                },
+              },
+            },
+            data: taskPlanMag.useDistribution.optionS,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -135,12 +120,21 @@ export default {
   overflow: auto;
   .top {
     width: 100%;
-    height: calc(50% - 8px);
+    height: calc(50% - 29px);
   }
   .btm {
     width: 100%;
-    height: calc(50% - 8px);
+    height: calc(50% - 29px);
     margin-top: 16px;
+  }
+  .txt {
+    height: 21px;
+    text-align: left;
+    font-weight: 600;
+    background-image: -webkit-linear-gradient(#66bdcc, #f3fcfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 </style>

@@ -45,7 +45,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">作战使用态势111</div>
+            <div class="text-txt">作战使用态势</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -143,10 +143,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.center-top{
-  height: 55%!important;
-}
-.center-btm{
-  height: 45%!important;
-}
+ 
 </style>
