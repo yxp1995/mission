@@ -6,6 +6,7 @@
 
 <script>
 import * as echarts from "echarts";
+import {comprehensiveAssessment} from "../../assets/jsonData"
 export default {
   name: "TaskDetail",
   data() {
@@ -45,7 +46,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["1", "2", "3", "4", "5", "6","7","8","9","10"],
+          data:comprehensiveAssessment.taskDetail.xAxisData,
           show: false,
         },
         yAxis: {
@@ -56,13 +57,13 @@ export default {
             name: "人次",
             type: "line",
 
-            data: [65,49, 4,84,55,81,36,32,59,3, ],
+            data: comprehensiveAssessment.taskDetail.series1,
           },
           {
             name: "已检测",
             type: "line",
 
-            data: [150, 232, 201, 154, 190, 330, 410,54,69,78],
+            data: comprehensiveAssessment.taskDetail.series2,
           },
         ],
       };

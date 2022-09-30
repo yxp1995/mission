@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {comprehensiveAssessment} from "../../assets/jsonData"
 import * as echarts from "echarts";
 export default {
   name: "TaskTime1",
@@ -61,7 +62,7 @@ export default {
         xAxis: [
           {
             type: "category",
-            data: ["5月份", "6月份", "7月份", "8月份", "9月份", "10月份"],
+            data: comprehensiveAssessment.taskTime1.xAxisData,
             nameTextStyle: {
               color: "#fff",
             },
@@ -100,7 +101,7 @@ export default {
                 barBorderRadius: [5, 5, 0, 0],
               },
             }, //设置柱子圆角
-            data: [320, 332, 301, 334, 390, 330, 320, 110, 150, 250, 210, 100],
+            data:  comprehensiveAssessment.taskTime1.value1,
           },
 
           {
@@ -115,15 +116,12 @@ export default {
                 barBorderRadius: [5, 5, 0, 0],
               },
             },
-            data: [150, 232, 201, 154, 190, 330, 410, 510, 450, 750, 910, 600],
+            data:  comprehensiveAssessment.taskTime1.value2,
           },
           {
             name: "认证中",
             type: "bar",
-            data: [
-              862, 1018, 964, 1026, 1679, 1600, 1570, 1110, 1250, 2250, 2110,
-              1000,
-            ],
+            data: comprehensiveAssessment.taskTime1.value3,
             emphasis: {
               focus: "series",
             },

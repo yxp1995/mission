@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import {comprehensiveAssessment} from "../../assets/jsonData"
 import * as echarts from "echarts";
 export default {
   data() {
@@ -23,7 +24,7 @@ export default {
       var myChart = echarts.init(chartDom);
       var option;
 
-      let data = 89;
+      let data = comprehensiveAssessment.useDistribution.Zdata;
       option = {
         title: {
           // 标题组件，包含主标题和副标题
@@ -115,7 +116,7 @@ export default {
       var myChart = echarts.init(chartDom);
       var option;
 
-      let data = 65;
+      let data = comprehensiveAssessment.useDistribution.Sdata;
       option = {
         title: {
           // 标题组件，包含主标题和副标题

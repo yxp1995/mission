@@ -6,6 +6,7 @@
 
 <script>
 import * as echarts from "echarts";
+import {comprehensiveAssessment} from "../../assets/jsonData"
 export default {
   name: "middleBar",
   data() {
@@ -26,7 +27,7 @@ export default {
 
       option = {
         legend: {
-          data: ["2016", "2017", "2018"],
+          data: comprehensiveAssessment.middleBar.legendData,
           textStyle: {
             color: "#fff",
           },
@@ -36,13 +37,7 @@ export default {
         },
         radar: {
           // shape: 'circle',
-          indicator: [
-            { name: "战备效能", max: 70 },
-            { name: "值班效能", max: 50 },
-            { name: "反击效能", max: 50 },
-            { name: "保障效益", max: 1 },
-            { name: "任务饱和度", max: 100 },
-          ],
+          indicator:  comprehensiveAssessment.middleBar.indicatorData,
           textStyle: {
             color: "#fff",
           },
@@ -56,7 +51,7 @@ export default {
             },
             data: [
               {
-                value: [15.821, 11.454, 8.210, 0.762, 71.25],
+                value:  comprehensiveAssessment.middleBar.value1,
                 name: "2016",
                 areaStyle: {
                   // 区域样式
@@ -74,7 +69,7 @@ export default {
                 },
               },
               {
-                value: [24.362, 15.372, 11.864, 0.821, 85.36],
+                value:comprehensiveAssessment.middleBar.value2,
                 name: "2017",
                 areaStyle: {
                   color: "#ee6666",
@@ -90,7 +85,7 @@ export default {
                 },
               },
               {
-                value: [31.234, 24.537, 16.722, 0.751, 91.35],
+                value: comprehensiveAssessment.middleBar.value3,
                 name: "2018",
                 areaStyle: {
                   color: "#5470c6",

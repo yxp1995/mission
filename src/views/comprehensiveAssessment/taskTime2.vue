@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {comprehensiveAssessment} from "../../assets/jsonData"
 import * as echarts from "echarts";
 export default {
   name: "TaskTime2",
@@ -60,7 +61,7 @@ export default {
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["1", "2", "3", "4", "5", "6", "7"],
+          data:comprehensiveAssessment.taskTime2.xAxisData,
           nameTextStyle: {
               color: "#fff",
             },
@@ -88,19 +89,19 @@ export default {
             name: "已认证",
             type: "line",
 
-            data: [120, 132, 101, 134, 90, 230, 210],
+            data: comprehensiveAssessment.taskTime2.value1,
           },
           {
             name: "认证中",
             type: "line",
 
-            data: [220, 182, 191, 234, 290, 330, 310],
+            data: comprehensiveAssessment.taskTime2.value2,
           },
           {
             name: "已检测",
             type: "line",
 
-            data: [150, 232, 201, 154, 190, 330, 410],
+            data: comprehensiveAssessment.taskTime2.value3,
           },
         ],
       };

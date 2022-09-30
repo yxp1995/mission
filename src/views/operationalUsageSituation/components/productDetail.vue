@@ -30,11 +30,13 @@
 </template>
 
 <script>
+
+import {operationalUsageSituation} from "../../../assets/jsonData"
 export default {
   name: "productDetail",
   data() {
     return {
-      unitOutList: [],
+      unitOutList: operationalUsageSituation.productDetailList,
     };
   },
   created() {
@@ -42,19 +44,19 @@ export default {
   },
   methods: {
     getList() {
-      for (let i = 0; i < 5; i++) {
-        const obj = {
-          code: "12345",
-          productName: "文字可修改",
-          productClass: "文字可修改",
-          productPosition: "文字可修改",
-          startTime: "2021/03/06",
-          endTime: "2021/03/06",
-          useProduct: "文字可修改",
-          useTime: "2021/03/06",
-        };
-        this.unitOutList.push(obj);
-      }
+      // for (let i = 0; i < 5; i++) {
+      //   const obj = {
+      //     code: "12345",
+      //     productName: "文字可修改",
+      //     productClass: "文字可修改",
+      //     productPosition: "文字可修改",
+      //     startTime: "2021/03/06",
+      //     endTime: "2021/03/06",
+      //     useProduct: "文字可修改",
+      //     useTime: "2021/03/06",
+      //   };
+      //   this.unitOutList.push(obj);
+      // }
     },
   },
 };

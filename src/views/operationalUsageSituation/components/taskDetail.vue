@@ -21,9 +21,9 @@
           <span>{{ item.productPosition }}</span>
           <span>{{ item.startTime }}</span>
           <span>{{ item.endTime }}</span>
-           <el-button class="linear" size="mini">上一页</el-button>
+           <el-button class="linear" size="mini">进入</el-button>
     
-         <el-button class="linear" size="mini">下一页</el-button> 
+         <el-button class="linear" size="mini">进入</el-button> 
         </li>
       </ul>
     </div>
@@ -31,11 +31,12 @@
 </template>
 
 <script>
+import {operationalUsageSituation} from "../../../assets/jsonData"
 export default {
   name: "taskDetail",
   data() {
     return {
-      unitOutList: [],
+      unitOutList:operationalUsageSituation.taskDetailList,
     };
   },
   created() {
@@ -43,19 +44,19 @@ export default {
   },
   methods: {
     getList() {
-      for (let i = 0; i < 5; i++) {
-        const obj = {
-          code: "12345",
-          productName: "文字可修改",
-          productClass: "文字可修改",
-          productPosition: "文字可修改",
-          startTime: "2021/03/06",
-          endTime: "2021/03/06",
-          useProduct: "文字可修改",
-          useTime: "2021/03/06",
-        };
-        this.unitOutList.push(obj);
-      }
+      // for (let i = 0; i < 5; i++) {
+      //   const obj = {
+      //     code: "12345",
+      //     productName: "文字可修改",
+      //     productClass: "文字可修改",
+      //     productPosition: "文字可修改",
+      //     startTime: "2021/03/06",
+      //     endTime: "2021/03/06",
+      //     useProduct: "文字可修改",
+      //     useTime: "2021/03/06",
+      //   };
+      //   this.unitOutList.push(obj);
+      // }
     },
   },
 };
@@ -69,18 +70,26 @@ export default {
 .pollutions .th {
   font-size: 10px !important;
 }
-:deep(.datacommon .pollutions .seamless-warp .item li span){
+.item li span {
   font-size: 10px !important;
 }
+// :deep(.datacommon .pollutions .seamless-warp .item li span){
+//   font-size: 10px !important;
+// }
  .linear {
     background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
     color: #fff;
+    font-size: 8px;
      
   }
 :deep(.el-button--mini){
-  padding:4px 8px
+  padding: 2 0
 }
 :deep(.el-button--mini.is-round){
-   padding:4px 8px
+   padding:2 0
+}
+
+:deep(.el-button--mini span ){
+ font-size: 8px;
 }
 </style>
