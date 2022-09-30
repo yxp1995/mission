@@ -21,9 +21,9 @@
           <span>{{ item.productPosition }}</span>
           <span>{{ item.startTime }}</span>
           <span>{{ item.endTime }}</span>
-           <el-button class="linear" size="mini">进入</el-button>
-    
-         <el-button class="linear" size="mini">进入</el-button> 
+
+          <span> <el-button class="linear" size="mini">进入</el-button></span>
+          <span> <el-button class="linear" size="mini">进入</el-button> </span>
         </li>
       </ul>
     </div>
@@ -31,12 +31,12 @@
 </template>
 
 <script>
-import {operationalUsageSituation} from "../../../assets/jsonData"
+import { operationalUsageSituation } from "../../../assets/jsonData";
 export default {
   name: "taskDetail",
   data() {
     return {
-      unitOutList:operationalUsageSituation.taskDetailList,
+      unitOutList: operationalUsageSituation.taskDetailList,
     };
   },
   created() {
@@ -73,23 +73,22 @@ export default {
 .item li span {
   font-size: 10px !important;
 }
-// :deep(.datacommon .pollutions .seamless-warp .item li span){
-//   font-size: 10px !important;
-// }
- .linear {
-    background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
-    color: #fff;
-    font-size: 8px;
-     
-  }
-:deep(.el-button--mini){
-  padding: 2 0
+:deep(.datacommon .pollutions .seamless-warp .item li span) {
+  font-size: 10px !important;
 }
-:deep(.el-button--mini.is-round){
-   padding:2 0
+.linear {
+  background-image: linear-gradient(#d19afa, #8e96f4, #e1e3f7);
+  color: #fff;
+  font-size: 10px;
+}
+:deep(.el-button--mini) {
+  padding: 5px 5px;
+}
+:deep(.el-button--mini.is-round) {
+  padding: 5px 5px;
 }
 
-:deep(.el-button--mini span ){
- font-size: 8px;
+:deep(.el-button--mini span) {
+  font-size: 10px;
 }
 </style>
