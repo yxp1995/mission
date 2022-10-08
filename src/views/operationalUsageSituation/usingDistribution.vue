@@ -2,6 +2,7 @@
   <div class="dis-box">
     <div class="txt">Z型产品</div>
     <div ref="chartPanel" id="chart-panel" class="top"></div>
+    <div class="line"></div>
     <div class="txt">S型产品</div>
     <div ref="chartPanel2" id="chart-panel2" class="btm"></div>
   </div>
@@ -135,6 +136,13 @@ export default {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .line{
+    height: 0;
+    width: 100%;
+    border-top:1px dashed #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 </style>

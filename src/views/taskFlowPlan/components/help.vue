@@ -18,7 +18,7 @@
       />
     </div>
     <div class="collapse-body" :class="collapseCut ? '' : 'close'">
-      <div class="container">提示内容</div>
+      <div class="container">经系统数据验证，您的推演数据逻辑不完整，需要重新校正相关数据。</div>
       <div class="footer-btn">
         <el-button class="linear" size="mini">修改</el-button>
         <el-button class="linear" size="mini">下一步</el-button>
@@ -76,7 +76,10 @@ export default {
     overflow: hidden;
     .container {
       min-height: 100px;
-      line-height: 100px;
+      // line-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #fff;
     }
     .footer-btn {

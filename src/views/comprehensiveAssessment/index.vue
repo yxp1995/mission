@@ -59,7 +59,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">年度任务性能评估</div>
+            <div class="text-txt">综合效能评估</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -76,7 +76,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">年度任务强度分析</div>
+            <div class="text-txt">任务强度分析</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
@@ -94,7 +94,7 @@
                 <img src="~@/assets/images/eight.png" alt="" />
                 <img src="~@/assets/images/seven.png" alt="" />
               </div>
-              <div class="text-txt">任务风险系数对比</div>
+              <div class="text-txt">任务风险系数</div>
               <div class="text-img">
                 <img src="~@/assets/images/seven.png" alt="" />
                 <img src="~@/assets/images/nine.png" alt="" />
@@ -111,7 +111,7 @@
                 <img src="~@/assets/images/eight.png" alt="" />
                 <img src="~@/assets/images/seven.png" alt="" />
               </div>
-              <div class="text-txt">产品使用时域分布</div>
+              <div class="text-txt">动用频次分布</div>
               <div class="text-img">
                 <img src="~@/assets/images/seven.png" alt="" />
                 <img src="~@/assets/images/nine.png" alt="" />
@@ -131,7 +131,7 @@
               <img src="~@/assets/images/eight.png" alt="" />
               <img src="~@/assets/images/seven.png" alt="" />
             </div>
-            <div class="text-txt">产品战储分布</div>
+            <div class="text-txt">战备分布</div>
             <div class="text-img">
               <img src="~@/assets/images/seven.png" alt="" />
               <img src="~@/assets/images/nine.png" alt="" />
