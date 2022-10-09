@@ -54,9 +54,7 @@
           </div>
         </div>
         <div class="center-btm">
-          <div class="main-container">
-            <product-selection/>
-          </div>
+          <product-selection />
         </div>
       </div>
       <div class="main-right">

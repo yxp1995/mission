@@ -286,6 +286,27 @@ li {
   width: 100%;
 }
 
+.el-input-number {
+  width: 100%;
+
+  .el-input__inner {
+    text-align: left;
+  }
+}
+
+.el-input-number__increase {
+  color: #C0C4CC;
+  background: rgba(0, 0, 0, 0);
+  border-left: 1px solid #C0C4CC !important;
+  border-bottom: 1px solid #C0C4CC !important;
+}
+
+.el-input-number__decrease {
+  color: #C0C4CC;
+  background: rgba(0, 0, 0, 0);
+  border-left: 1px solid #C0C4CC !important;
+}
+
 .elDatePicker.el-picker-panel {
   color: #fff; //设置当前面板的月份的字体为白色，记为1
   background: #041539; //定义整体面板的颜色
@@ -305,6 +326,59 @@ li {
     //设置星期颜色，记为4
     color: #ffffff;
   }
+
+  .el-time-panel {
+    // 设置时间框样式
+    background: #041539;
+
+    .el-time-spinner__item {
+      color: #fff;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0);
+        color: #409EFF;
+      }
+    }
+
+    .el-time-panel__btn.cancel {
+      color: #fff;
+    }
+  }
+
+  .el-picker-panel__footer {
+    // 日期时间选择器底部按钮盒子样式
+    background: #041539;
+
+    .el-button--default {
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      color: #fff;
+    }
+  }
+}
+
+.el-time-panel {
+  // 时间选择器
+  background: #041539;
+
+  .el-time-spinner__item {
+    color: #fff;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0) !important;
+      color: #409EFF;
+    }
+
+    &.active {
+      color: #409EFF;
+    }
+  }
+
+  .el-time-panel__btn.cancel {
+    // 时间选择器底部按钮盒子
+    color: #fff;
+  }
+
 }
 
 .el-select {

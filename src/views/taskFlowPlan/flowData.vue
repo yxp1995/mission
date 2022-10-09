@@ -6,9 +6,9 @@
         <div id="charts1" class="charts1"></div>
       </el-col>
     </el-row>
-    <div class="txt">操作时长分布</div>
+    <div class="txt">任务时长分布</div>
     <div id="charts2" class="charts2"></div>
-    <div class="txt">任务人员分布</div>
+    <div class="txt">任务号手分布</div>
     <div id="charts3" class="charts3"></div>
   </div>
 </template>

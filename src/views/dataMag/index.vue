@@ -20,39 +20,26 @@
             <el-menu-item-group>
               <template slot="title">武器装备管理</template>
               <el-menu-item index="1-3">产品武器</el-menu-item>
-              <el-menu-item index="1-4">基载平台</el-menu-item>
-              <el-menu-item index="1-5">保障装备</el-menu-item>
+              <el-menu-item index="1-4">机载平台</el-menu-item>
+              <el-menu-item index="1-5">技保装备</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group>
               <template slot="title">任务流程管理</template>
-              <el-menu-item index="1-6">任务信息</el-menu-item>
-              <el-menu-item index="1-7">流程信息</el-menu-item>
-              <el-menu-item index="1-8">工序信息</el-menu-item>
+              <el-menu-item index="1-6">任务规划</el-menu-item>
+              <el-menu-item index="1-7">流程计划</el-menu-item>
+              <el-menu-item index="1-8">操作工序</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group>
-              <template slot="title">模型规划管理</template>
+              <template slot="title">模型规则管理</template>
               <el-menu-item index="1-9">模型参数</el-menu-item>
-              <el-menu-item index="1-10">规则设置</el-menu-item>
+              <el-menu-item index="1-10">指标参数</el-menu-item>
+              <el-menu-item index="1-11">规则设置</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group>
               <template slot="title">系统信息管理</template>
-              <el-menu-item index="1-11">用户信息</el-menu-item>
-              <el-menu-item index="1-12">日志信息</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <template slot="title">系统信息管理</template>
-              <el-menu-item index="1-11">用户信息</el-menu-item>
-              <el-menu-item index="1-12">日志信息</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <template slot="title">系统信息管理</template>
-              <el-menu-item index="1-11">用户信息</el-menu-item>
-              <el-menu-item index="1-12">日志信息</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <template slot="title">系统信息管理</template>
-              <el-menu-item index="1-11">用户信息</el-menu-item>
-              <el-menu-item index="1-12">日志信息</el-menu-item>
+              <el-menu-item index="1-12">用户信息</el-menu-item>
+              <el-menu-item index="1-13">权限管理</el-menu-item>
+              <el-menu-item index="1-14">系统日志</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>

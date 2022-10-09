@@ -11,12 +11,12 @@
       <ul id="nav" class="datacommon-nav">
         <li :class="num == 1 ? 'active' : ''">
           <div class="bgc">
-            <router-link to="/taskFlowPlan">任务流程计划</router-link>
+            <router-link to="/taskPlanMag">任务规划管理</router-link>
           </div>
         </li>
         <li :class="num == 2 ? 'active' : ''">
           <div class="bgc">
-            <router-link to="/taskPlanMag">任务规划管理</router-link>
+            <router-link to="/taskFlowPlan">任务流程计划</router-link>
           </div>
         </li>
         <li :class="num == 3 ? 'active' : ''">
