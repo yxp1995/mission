@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {comprehensiveAssessment} from "../../assets/jsonData"
+import { comprehensiveAssessment } from "../../assets/jsonData";
 import * as echarts from "echarts";
 export default {
   name: "TaskTime2",
@@ -57,52 +57,65 @@ export default {
           top: "1%",
           containLabel: true,
         },
-         
+
         xAxis: {
+          name: "任务编号",
           type: "category",
           boundaryGap: false,
-          data:comprehensiveAssessment.taskTime2.xAxisData,
+          data: comprehensiveAssessment.taskTime2.xAxisData,
           nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
               color: "#fff",
             },
-            axisLine: {
-              show: true,
-              lineStyle: {
-                color: "#fff",
-              },
-            },
+          },
+
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
         yAxis: {
+          name: "风险系数",
           type: "value",
           nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
               color: "#fff",
             },
-            axisLine: {
-              show: true,
-              lineStyle: {
-                color: "#fff",
-              },
-            },
+          },
+
+          axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
         series: [
           {
-            name: "已认证",
-            type: "line",
+            name: "风险系数",
+            type: "bar",
+            barWidth: 10,
 
             data: comprehensiveAssessment.taskTime2.value1,
           },
-          {
-            name: "认证中",
-            type: "line",
+          // {
+          //   name: "认证中",
+          //   type: "line",
 
-            data: comprehensiveAssessment.taskTime2.value2,
-          },
-          {
-            name: "已检测",
-            type: "line",
+          //   data: comprehensiveAssessment.taskTime2.value2,
+          // },
+          // {
+          //   name: "已检测",
+          //   type: "line",
 
-            data: comprehensiveAssessment.taskTime2.value3,
-          },
+          //   data: comprehensiveAssessment.taskTime2.value3,
+          // },
         ],
       };
 

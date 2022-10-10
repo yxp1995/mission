@@ -61,6 +61,7 @@ export default {
         },
         xAxis: [
           {
+            name:"动用月份",
             type: "category",
             data: comprehensiveAssessment.taskTime1.xAxisData,
             nameTextStyle: {
@@ -72,12 +73,16 @@ export default {
                 color: "#fff",
               },
             },
+             axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
           },
         ],
         yAxis: [
           {
             type: "value",
-            name: "单位 / 个",
+            name: "动用枚次",
             nameTextStyle: {
               color: "#fff",
             },
@@ -87,12 +92,16 @@ export default {
                 color: "#fff",
               },
             },
+             axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
           },
         ],
         series: [
           {
-            name: "已认证",
-            type: "bar",
+            name: "2018",
+            type: "line",
             emphasis: {
               focus: "series",
             },
@@ -105,8 +114,8 @@ export default {
           },
 
           {
-            name: "已检测",
-            type: "bar",
+            name: "2019",
+            type: "line",
             stack: "Ad",
             emphasis: {
               focus: "series",
@@ -119,8 +128,8 @@ export default {
             data:  comprehensiveAssessment.taskTime1.value2,
           },
           {
-            name: "认证中",
-            type: "bar",
+            name: "2020",
+            type: "line",
             data: comprehensiveAssessment.taskTime1.value3,
             emphasis: {
               focus: "series",

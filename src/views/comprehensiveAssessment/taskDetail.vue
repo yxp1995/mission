@@ -47,10 +47,20 @@ export default {
           type: "category",
           boundaryGap: false,
           data:comprehensiveAssessment.taskDetail.xAxisData,
-          show: false,
+          show: true,
+          name:"日期",
+           axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
         yAxis: {
-          show: false,
+          show: true,
+          name:"人次",
+           axisLabel: {
+            color: "#fff",
+            fontSize: 10,
+          },
         },
         series: [
           {
@@ -59,12 +69,12 @@ export default {
 
             data: comprehensiveAssessment.taskDetail.series1,
           },
-          {
-            name: "已检测",
-            type: "line",
+          // {
+          //   name: "已检测",
+          //   type: "line",
 
-            data: comprehensiveAssessment.taskDetail.series2,
-          },
+          //   data: comprehensiveAssessment.taskDetail.series2,
+          // },
         ],
       };
 
@@ -81,6 +91,6 @@ export default {
 }
 #all2 {
   width: 100%;
-  height: 120px;
+  height: 140px;
 }
 </style>
