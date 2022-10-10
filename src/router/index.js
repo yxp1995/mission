@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    redirect: '/taskFlowPlan'
+    redirect: '/taskPlanMag'
   },
   {
     path: '/taskFlowPlan',

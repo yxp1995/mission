@@ -431,3 +431,19 @@ li {
 ::-webkit-scrollbar-corner {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+// 弹窗样式
+.el-dialog {
+  // background: #010b27;
+}
+
+// 表格样式
+.container-table {
+  th {
+    text-align: center !important;
+  }
+
+  td {
+    text-align: center !important;
+  }
+}

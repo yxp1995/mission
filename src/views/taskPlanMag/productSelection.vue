@@ -340,7 +340,9 @@
         <el-row :gutter="20">
           <el-col :span="11">
             <el-form-item label="拟用产品核验:">
-              <el-button type="text" size="mini">进入</el-button>
+              <el-button type="text" size="mini" @click="productCheck"
+                >进入</el-button
+              >
             </el-form-item>
           </el-col>
           <el-col :span="11">
@@ -359,12 +361,26 @@
         <el-button class="linear" size="mini">完成</el-button>
       </div>
     </div>
+    <!-- 拟用产品核验弹窗 -->
+    <el-dialog
+      title="拟用产品核验窗口"
+      :visible.sync="detailDialog"
+      :show-close="true"
+      center
+      width="1000px"
+    >
+      <product-check @setDetailModal="setDetailModal"/>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import productCheck from "./productCheck";
 export default {
   name: "ProductSelection",
+  components: {
+    productCheck,
+  },
   data() {
     const checkAge = (rule, value, callback) => {
       if (!value) {
@@ -480,6 +496,7 @@ export default {
         { value: 4, label: "蓝色" },
         { value: 5, label: "绿色" },
       ],
+      detailDialog: false,
       queryParams2: {
         radio: "1",
         taskName: undefined,
@@ -531,6 +548,14 @@ export default {
       this.count = 1;
     },
     // 规划任务窗口 end
+    // 选择产品窗口 start
+    productCheck() {
+      this.detailDialog = true;
+    },
+    setDetailModal(val) {
+      this.detailDialog = val;
+    },
+    // 选择产品窗口 end
     // 公用
     toTaskFlowPlan() {
       this.$router.push({
