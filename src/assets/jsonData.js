@@ -87,7 +87,7 @@ export const taskFlowPlan = {
  /**
  * 数据说明
  *  operationalUsageSituation: 作战使用态势页面
- *    middleBar: 作战使用态势柱状图 数据 沿用 taskOverview
+ *    middleBar: 作战使用态势柱状图 数据  
  *    productDetail: 产品详情 数据
  *    taskDetail: 任务详情 数据
  *    useDistribution :使用分布 数据 沿用taskPlanMag
@@ -146,7 +146,7 @@ for (let i = 0; i < 5; i++) {
  *    taskDetail: 任务强度分析 数据
  *    taskTime1: 动用频次 数据
  *    taskTime2 :风险系数 数据  
- *    useDistribution：使用分布 数据
+ *    useDistribution：战储分布 数据
  */
 
    export const comprehensiveAssessment={
