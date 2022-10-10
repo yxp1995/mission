@@ -8,8 +8,10 @@
       <li>任务类别</li>
       <li>开始时间</li>
       <li>结束时间</li>
+      <li>任务简介</li>
+      <li>流程计划</li>
       <li>动用产品</li>
-      <li>XX计划</li>
+      <li>信息确认</li>
     </ul>
     <div class="seamless-warp">
       <ul class="item">
@@ -21,9 +23,11 @@
           <span>{{ item.productPosition }}</span>
           <span>{{ item.startTime }}</span>
           <span>{{ item.endTime }}</span>
+          <span>{{ item.des }}</span>
 
           <span> <el-button class="linear" size="mini">进入</el-button></span>
           <span> <el-button class="linear" size="mini">进入</el-button> </span>
+           <span> <el-button class="linear" size="mini">编辑/保存</el-button> </span>
         </li>
       </ul>
     </div>
@@ -90,5 +94,10 @@ export default {
 
 :deep(.el-button--mini span) {
   font-size: 10px;
+}
+
+:deep(.datacommon .pollutions .th li){
+  flex: 0;
+  width: 40px;
 }
 </style>

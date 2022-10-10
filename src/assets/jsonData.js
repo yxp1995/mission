@@ -66,16 +66,20 @@ export const taskFlowPlan = {
   },
   useDistribution: {
     optionZ: [
-      { value: 20, name: "不能用" },
+      { value: 20, name: "贮存" },
       { value: 18, name: "战备" },
       { value: 49, name: "值班" },
-      { value: 13, name: "未用" },
+      { value: 13, name: "缺套" },
+      { value: 23, name: "维修" },
+      { value: 33, name: "返厂" },
     ],
     optionS: [
-      { value: 1048, name: "维修" },
-      { value: 735, name: "贮存" },
-      { value: 580, name: "值班" },
-      { value: 484, name: "战备" },
+      { value: 20, name: "贮存" },
+      { value: 18, name: "战备" },
+      { value: 49, name: "值班" },
+      { value: 13, name: "缺套" },
+      { value: 23, name: "维修" },
+      { value: 33, name: "返厂" },
     ]
   }
  }
@@ -92,22 +96,47 @@ const productDetailList= []
 const taskDetailList= []
 for (let i = 0; i < 5; i++) {
   const obj = {
-    code: "12345",
-    productName: "文字可修改",
-    productClass: "文字可修改",
-    productPosition: "文字可修改",
-    startTime: "2021/03/06",
-    endTime: "2021/03/06",
+    code: "220403",
+    productName: "X枚X型试验",
+    productClass: "实战实用",
+    productPosition: "飞行实验",
+    startTime: "20220422",
+    endTime: "20220515",
     useProduct: "文字可修改",
     useTime: "2021/03/06",
+    des:"拟打击X目标"
   };
-  productDetailList.push(obj);
+
+ 
+
   taskDetailList.push(obj)
+}
+
+for (let i = 0; i < 5; i++) {
+  const obj2 = {
+    code: "220403",
+    productType: "E型",
+    position1: "X舰",
+    time1: "2022-04-03",
+    time2: "2022-04-03",
+    time3: "2022-04-03",
+    position2: "ZBW",
+    use: "0.864",
+    des:"已中修"
+
+  };
+  productDetailList.push(obj2);
 }
 
  export const operationalUsageSituation={
   productDetailList,
   taskDetailList,
+  middleBar:{
+    baseLine: [4, 1.5, 2, 3, 4],
+    one: [3.5, 4.2, 5, "-", "-"],
+    two: ["-", "-", "-", 6, 7],
+    yAxis: ["实战实用1", "巡逻值班2", "接送产品3", "贮存保障4", "考核训练5"],
+  }
  }
 
   /**

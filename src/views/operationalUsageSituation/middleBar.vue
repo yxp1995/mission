@@ -4,7 +4,7 @@
 
 <script>
 import * as echarts from "echarts";
-import { taskFlowPlan } from "@/assets/jsonData";
+import { operationalUsageSituation } from "@/assets/jsonData";
 export default {
   name: "middleBar",
   data() {
@@ -68,7 +68,7 @@ export default {
         yAxis: {
           type: "category",
           name: "流程编号",
-          data: taskFlowPlan.processPlan.yAxis,
+          data: operationalUsageSituation.middleBar.yAxis,
           nameLocation: "start",
           nameTextStyle: {
             color: "#fff",
@@ -97,7 +97,7 @@ export default {
                 color: "transparent",
               },
             },
-            data: taskFlowPlan.processPlan.baseLine,
+            data: operationalUsageSituation.middleBar.baseLine,
           },
           {
             name: "Income",
@@ -107,7 +107,7 @@ export default {
               show: true,
               position: "top",
             },
-            data: taskFlowPlan.processPlan.one,
+            data: operationalUsageSituation.middleBar.one,
             itemStyle: {
               //这里是颜色
               color: function (p) {
@@ -125,7 +125,7 @@ export default {
               show: true,
               position: "bottom",
             },
-            data: taskFlowPlan.processPlan.two,
+            data: operationalUsageSituation.middleBar.two,
             itemStyle: {
               //这里是颜色
               color: function (p) {
